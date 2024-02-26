@@ -7,11 +7,14 @@ using UnityEngine.XR;
 
 public class XMLManager : MonoBehaviour
 {
+    // 파일 경로와 이름
     string filePath = "Assets/Resources/XML/";
     string fileName = "xmlTest.xml";
 
+    // 곡 정보
     SongInfo songInfos = new SongInfo();
 
+    // 트랙 별 노트 정보
     List<int>[] tracks = new List<int>[]
     {
         new List<int> { },
@@ -22,12 +25,9 @@ public class XMLManager : MonoBehaviour
 
     private void Start()
     {
-        tracks[0].Add(1536);
-        tracks[1].Add(3072);
-        tracks[2].Add(4068);
-        tracks[3].Add(6144);
-
-        SaveXML();
+        //SaveXML();
+        LoadXML();
+        PrintList();
     }
 
     private void SaveXML()
@@ -88,6 +88,70 @@ public class XMLManager : MonoBehaviour
 
         // Xml 저장
         doc.Save(filePath + fileName);
+    }
+
+    private void LoadXML()
+    {
+        // XML 불러와서 파일읽기
+        XmlDocument doc = new XmlDocument();
+        doc.Load(filePath + fileName);
+
+        // root 설정
+        XmlElement nodes = doc["root"];
+
+        // "header" -> "songinfo" 속성 읽어오기
+        XmlElement header = nodes["header"];
+        XmlElement songInfo = header["songinfo"];
+
+        SongInfo readInfo = new SongInfo();
+
+        readInfo.tempo = System.Convert.ToSingle(songInfo.GetAttribute("tempo"));
+        readInfo.tpm = System.Convert.ToInt32(songInfo.GetAttribute("tpm"));
+        readInfo.startTick = System.Convert.ToInt32(songInfo.GetAttribute("start_tick"));
+        readInfo.endTick = System.Convert.ToInt32(songInfo.GetAttribute("end_tick"));
+        readInfo.tick = System.Convert.ToInt32(songInfo.GetAttribute("tick"));
+        readInfo.ms = System.Convert.ToInt32(songInfo.GetAttribute("ms"));
+        readInfo.tps = System.Convert.ToInt32(songInfo.GetAttribute("tps"));
+
+        songInfos = readInfo;
+
+        // 트랙 별 노트 정보 불러오기
+        XmlElement noteList = nodes["note_list"];
+
+        for (int i = 0; i < 4; i++)
+        {
+            XmlNodeList trackNodes = noteList.ChildNodes;
+            
+            foreach (XmlElement note in trackNodes[i])
+            {
+                int temp = System.Convert.ToInt32(note.GetAttribute("tick"));
+                tracks[i].Add(temp);
+            }
+            
+        }
+
+    }
+
+    private void PrintList()
+    {
+        // songinfo 속성 출력
+        SongInfo a = songInfos;
+        UnityEngine.Debug.Log($"tempo={a.tempo}," +
+            $" tpm={a.tpm}," +
+            $" start_tick={a.startTick}," +
+            $" end_tick={a.endTick}," +
+            $" tick={a.tick}," +
+            $" ms={a.ms}," +
+            $" tps={a.tps}");
+
+        // 트랙 별 노트 tick 출력
+        for (int i = 0; i < 4; i++)
+        {
+            foreach (int tick in tracks[i])
+            {
+                UnityEngine.Debug.Log($"track: {i + 3}, tick: {tick}");
+            }
+        }
     }
 
 }
