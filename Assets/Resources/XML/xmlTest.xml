@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <root>
   <header>
-    <songinfo tempo="0" tpm="1536" start_tick="0" end_tick="0" tick="0" ms="0" tps="0" />
+    <songinfo tempo="150" tpm="1536" start_tick="0" end_tick="135168" tick="135168" ms="140800" tps="960" />
   </header>
   <tempo>
-    <tempo tick="0" tempo="0" tps="0" />
+    <tempo tick="0" tempo="150" tps="960" />
   </tempo>
   <note_list>
     <track idx="3">
@@ -14,7 +14,7 @@
       <note tick="3072" />
     </track>
     <track idx="5">
-      <note tick="4068" />
+      <note tick="4608" />
     </track>
     <track idx="6">
       <note tick="6144" />
