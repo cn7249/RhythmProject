@@ -12,10 +12,10 @@ public class XMLManager : MonoBehaviour
     string fileName = "xmlTest.xml";
 
     // 곡 정보
-    SongInfo songInfos = new SongInfo();
+    public SongInfo songInfos = new SongInfo();
 
     // 트랙 별 노트 정보
-    List<int>[] tracks = new List<int>[]
+    public List<int>[] tracks = new List<int>[]
     {
         new List<int> { },
         new List<int> { },
@@ -25,12 +25,12 @@ public class XMLManager : MonoBehaviour
 
     private void Start()
     {
-        //SaveXML();
-        LoadXML();
-        PrintList();
+        // SaveXML();
+        // LoadXML();
+        // PrintList();
     }
 
-    private void SaveXML()
+    public void SaveXML()
     {
         // Xml 선언(버전, 인코딩 방식 설정)
         XmlDocument doc = new XmlDocument();
@@ -90,7 +90,7 @@ public class XMLManager : MonoBehaviour
         doc.Save(filePath + fileName);
     }
 
-    private void LoadXML()
+    public void LoadXML()
     {
         // XML 불러와서 파일읽기
         XmlDocument doc = new XmlDocument();
@@ -132,7 +132,7 @@ public class XMLManager : MonoBehaviour
 
     }
 
-    private void PrintList()
+    public void PrintList()
     {
         // songinfo 속성 출력
         SongInfo a = songInfos;
