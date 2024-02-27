@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <root>
   <header>
-    <songinfo tempo="0" tpm="0" start_tick="0" end_tick="0" tick="0" ms="0" tps="0" />
+    <songinfo tempo="0" tpm="1536" start_tick="0" end_tick="0" tick="0" ms="0" tps="0" />
   </header>
   <tempo>
     <tempo tick="0" tempo="0" tps="0" />
