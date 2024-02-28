@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 7854125226033412352}
   - component: {fileID: 3334224567133696715}
   - component: {fileID: 4651392599204313003}
+  - component: {fileID: 3873419053835866637}
   m_Layer: 5
   m_Name: NoteOrange
   m_TagString: Untagged
@@ -179,3 +180,15 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3873419053835866637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7389373198332821936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468e3af54a0ced948ac1b0bd2498ddc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
