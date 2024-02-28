@@ -9,7 +9,7 @@ public class InputSystem : MonoBehaviour
 	{
 		if (context.started)
 		{
-			Debug.Log("s");
+			InputSystemManager.instance.OnNotes[0]();
 		}
 	}
 	
