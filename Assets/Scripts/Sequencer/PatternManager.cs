@@ -13,13 +13,17 @@ public class PatternManager : MonoBehaviour
     [SerializeField] private GameObject _bars;
     [SerializeField] private GameObject _notes;
 
+    public int GetCurrentBar { get; set; }
+    public int GetTotalBar { get { return totalBar; } }
+    public float GetGridScale { get { return _grid.transform.localScale.y; } }
+
     private XMLManager _xml;
     private GameObject _bar;
     private GameObject _noteBlue;
     private GameObject _noteOrange;
 
-    private int tpm; // Default = 1536 ticks per 1 bar
     private int totalBar;
+    private int tpm; // Default = 1536 ticks per 1 bar
     private float hpt; // heights per tick = 640 / 1536
 
     private void Awake()
