@@ -1317,6 +1317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36622693151d68246972e672dafad642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 519420031}
   _grid: {fileID: 1642893050}
 --- !u!1 &1690660719
 GameObject:
@@ -1642,6 +1643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3527988b58f2f48910dfb9df9f8292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _grid: {fileID: 1642893049}
   _bars: {fileID: 2128878803}
   _notes: {fileID: 1904646167}
 --- !u!4 &2119900583

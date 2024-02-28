@@ -5,6 +5,9 @@ using TMPro;
 
 public class PatternManager : MonoBehaviour
 {
+    public static PatternManager Instance;
+
+    [SerializeField] private GameObject _grid;
     [SerializeField] private GameObject _bars;
     [SerializeField] private GameObject _notes;
 
@@ -23,6 +26,15 @@ public class PatternManager : MonoBehaviour
         _bar = Resources.Load<GameObject>("Prefabs/Sequencer/Bar");
         _noteBlue = Resources.Load<GameObject>("Prefabs/Notes/NoteBlue");
         _noteOrange = Resources.Load<GameObject>("Prefabs/Notes/NoteOrange");
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void Start()
@@ -39,6 +51,37 @@ public class PatternManager : MonoBehaviour
         tpm = _xml.songInfos.tpm; // Default = 1536 ticks per 1 bar
         totalBar = _xml.songInfos.endTick / tpm;
         hpt = 640f / tpm;
+    }
+
+    public void CreateSingleNote(int barNum, float xPos, float yPos)
+    {
+        // _xml.tracks[0].Add(1536);
+
+        float yScale = _grid.transform.localScale.y;
+        float yOffset = _grid.transform.position.y;
+        float y = (yPos + 640f * barNum) * yScale + yOffset;
+
+        switch (xPos)
+        {
+            case -240f: // 1번 트랙
+                Instantiate(_noteBlue, new Vector3(xPos, y, 0f), Quaternion.identity, _notes.transform);
+                break;
+            case -80f: // 2번 트랙
+                Instantiate(_noteOrange, new Vector3(xPos, y, 0f), Quaternion.identity, _notes.transform);
+                break;
+            case 80f: // 3번 트랙
+                Instantiate(_noteOrange, new Vector3(xPos, y, 0f), Quaternion.identity, _notes.transform);
+                break;
+            case 240f: // 4번 트랙
+                Instantiate(_noteBlue, new Vector3(xPos, y, 0f), Quaternion.identity, _notes.transform);
+                break;
+        }
+    }
+
+    public void DeleteSingleNote(int barNum, float xPos, float yPos)
+    {
+        // _xml.tracks[0].Remove(1536);
+        Debug.Log("DeleteSingleNote");
     }
 
     private void MakeBars()

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1040984817897749965}
   - component: {fileID: 5932228350798880213}
   - component: {fileID: 1058170973011754657}
+  - component: {fileID: 9012209147985157300}
   m_Layer: 5
   m_Name: GridBtn
   m_TagString: Untagged
@@ -76,3 +77,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9012209147985157300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4988547180695992642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12cfe6ae302f20438f392beff24f9b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

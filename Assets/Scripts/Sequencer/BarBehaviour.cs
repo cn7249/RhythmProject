@@ -9,6 +9,11 @@ using UnityEngine.UI;
 
 public class BarBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public int CurrentBarNum 
+    { 
+        get { return int.Parse(_currentBarTxt.text.Replace("bar ", "")); }
+    }
+
     private Image _barImage;
     private TextMeshProUGUI _currentBarTxt;
     private GameObject _beat4;
