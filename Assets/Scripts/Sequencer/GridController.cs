@@ -13,11 +13,6 @@ public class GridController : MonoBehaviour, IDragHandler, IPointerDownHandler
 
     private float mouseScroll;
 
-    private void Start()
-    {
-
-    }
-
     private void Update()
     {
         UpdateGridScale();
