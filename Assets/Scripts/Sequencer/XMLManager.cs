@@ -9,7 +9,8 @@ public class XMLManager : MonoBehaviour
 {
     // 파일 경로와 이름
     string filePath = "Assets/Resources/XML/";
-    string fileName = "xmlTest.xml";
+    public string fileName = "xmlTest.xml";
+    public string GetFilePath { get { return filePath + fileName; } }
 
     // 곡 정보
     public SongInfo songInfos = new SongInfo();

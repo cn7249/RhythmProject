@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+  <header>
+    <songinfo tempo="150" tpm="1536" start_tick="0" end_tick="135168" tick="135168" ms="140800" tps="960" />
+  </header>
+  <tempo>
+    <tempo tick="0" tempo="150" tps="960" />
+  </tempo>
+  <note_list>
+    <track idx="3">
+      <note tick="0" />
+      <note tick="1536" />
+    </track>
+    <track idx="4">
+      <note tick="384" />
+      <note tick="1920" />
+    </track>
+    <track idx="5">
+      <note tick="768" />
+      <note tick="2304" />
+    </track>
+    <track idx="6">
+      <note tick="1152" />
+      <note tick="2688" />
+    </track>
+  </note_list>
+</root>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Runtime.CompilerServices;
+using System.IO;
 
 public class PatternManager : MonoBehaviour
 {
@@ -38,31 +39,50 @@ public class PatternManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    public bool SaveXmlSequence(string fileName)
     {
-        
+        _xml.fileName = fileName;
+
+        if (File.Exists(_xml.GetFilePath)) // 기존 파일에 저장한다면
+        {
+            _xml.SaveXML();
+            return true;
+        }
+        else // 새로 생성한다면
+        {
+            // 기본 템플릿 설정
+            _xml.songInfos.tempo = 150;
+            _xml.songInfos.tpm = 1536;
+            _xml.songInfos.startTick = 0;
+            _xml.songInfos.endTick = 135168;
+            _xml.songInfos.tick = 135168;
+            _xml.songInfos.ms = 140800;
+            _xml.songInfos.tps = 960;
+
+            _xml.SaveXML();
+            return false;
+        }
     }
 
-    public void SaveXmlSequence()
-    {
-        _xml.SaveXML();
-    }
-
-    public void LoadXmlSequence()
+    public bool LoadXmlSequence(string fileName)
     {
         DestroyAllLoadedObjects();
         LoadDefaultSettings();
-        _xml.LoadXML();
-        InitParameters();
-        MakeBars();
-        MakeNotes();
-    }
 
-    private void InitParameters()
-    {
-        tpm = _xml.songInfos.tpm;
-        totalBar = _xml.songInfos.endTick / tpm;
-        hpt = 640f / tpm;
+        _xml.fileName = fileName;
+
+        if (File.Exists(_xml.GetFilePath))
+        {
+            _xml.LoadXML();
+            InitParameters();
+            MakeBars();
+            MakeNotes();
+            return true;
+        }
+        else
+        {
+            return false; // 파일이 지정된 경로에 없으면 false 반환
+        }
     }
 
     public void CreateSingleNote(int barNum, float xPos, float yPos)
@@ -113,6 +133,13 @@ public class PatternManager : MonoBehaviour
             _xml.tracks[index].Remove(tick);
             Destroy(note);
         }
+    }
+
+    private void InitParameters()
+    {
+        tpm = _xml.songInfos.tpm;
+        totalBar = _xml.songInfos.endTick / tpm;
+        hpt = 640f / tpm;
     }
 
     private void MakeBars()
