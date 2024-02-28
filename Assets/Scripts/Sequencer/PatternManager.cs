@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Runtime.CompilerServices;
 
 public class PatternManager : MonoBehaviour
 {
@@ -55,33 +56,52 @@ public class PatternManager : MonoBehaviour
 
     public void CreateSingleNote(int barNum, float xPos, float yPos)
     {
-        // _xml.tracks[0].Add(1536);
+        // GridBtnBehaviour.cs 에서 호출
 
-        float yScale = _grid.transform.localScale.y;
-        float yOffset = _grid.transform.position.y;
-        float y = (yPos + 640f * barNum) * yScale + yOffset;
+        int index = (int)((xPos + 240f) / 160f);
+        int tick = (int)((yPos + 320f) * (1 / hpt) + (tpm * barNum));
+        bool isNoteExists = _xml.tracks[index].Contains(tick);
 
-        switch (xPos)
+        if (!isNoteExists)
         {
-            case -240f: // 1번 트랙
-                Instantiate(_noteBlue, new Vector3(xPos, y, 0f), Quaternion.identity, _notes.transform);
-                break;
-            case -80f: // 2번 트랙
-                Instantiate(_noteOrange, new Vector3(xPos, y, 0f), Quaternion.identity, _notes.transform);
-                break;
-            case 80f: // 3번 트랙
-                Instantiate(_noteOrange, new Vector3(xPos, y, 0f), Quaternion.identity, _notes.transform);
-                break;
-            case 240f: // 4번 트랙
-                Instantiate(_noteBlue, new Vector3(xPos, y, 0f), Quaternion.identity, _notes.transform);
-                break;
+            float yScale = _grid.transform.localScale.y;
+            float yOffset = _grid.transform.position.y;
+            float y = (yPos + 640f * barNum) * yScale + yOffset;
+
+            switch (index)
+            {
+                case 0: // 1번 트랙
+                    Instantiate(_noteBlue, new Vector3(xPos, y, 0f), Quaternion.identity, _notes.transform);
+                    break;
+                case 1: // 2번 트랙
+                    Instantiate(_noteOrange, new Vector3(xPos, y, 0f), Quaternion.identity, _notes.transform);
+                    break;
+                case 2: // 3번 트랙
+                    Instantiate(_noteOrange, new Vector3(xPos, y, 0f), Quaternion.identity, _notes.transform);
+                    break;
+                case 3: // 4번 트랙
+                    Instantiate(_noteBlue, new Vector3(xPos, y, 0f), Quaternion.identity, _notes.transform);
+                    break;
+            }
+
+            _xml.tracks[index].Add(tick);
         }
+
     }
 
-    public void DeleteSingleNote(int barNum, float xPos, float yPos)
+    public void DeleteSingleNote(float xPos, float yPos, GameObject note)
     {
-        // _xml.tracks[0].Remove(1536);
-        Debug.Log("DeleteSingleNote");
+        // NoteBehaviour.cs 에서 호출
+
+        int index = (int)((xPos + 240f) / 160f);
+        int tick = (int)((yPos + 320f) * (1 / hpt));
+        bool isNoteExists = _xml.tracks[index].Contains(tick);
+
+        if (isNoteExists)
+        {
+            _xml.tracks[index].Remove(tick);
+            Destroy(note);
+        }
     }
 
     private void MakeBars()

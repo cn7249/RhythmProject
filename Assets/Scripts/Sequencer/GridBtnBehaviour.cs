@@ -22,11 +22,5 @@ public class GridBtnBehaviour : MonoBehaviour, IPointerDownHandler
             // 좌클릭 시 노트 생성
             PatternManager.Instance.CreateSingleNote(_currentBarScript.CurrentBarNum, _pos.x, _pos.y);
         }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            // 우클릭 시 노트 제거
-            PatternManager.Instance.DeleteSingleNote(_currentBarScript.CurrentBarNum, _pos.x, _pos.y);
-        }
-        Debug.Log($"{_currentBarScript.CurrentBarNum}, {_pos.x}, {_pos.y}");
     }
 }
