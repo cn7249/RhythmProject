@@ -15,7 +15,21 @@ public class GridController : MonoBehaviour, IDragHandler, IPointerDownHandler
 
     private void Update()
     {
+        UpdateGridPosition();
         UpdateGridScale();
+    }
+
+    // Up, Down 혹은 W, S로 Grid 움직이기 가능
+    private void UpdateGridPosition()
+    {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
+            _grid.position -= new Vector3(0f, 20f, 0f);
+        }
+        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
+            _grid.position += new Vector3(0f, 20f, 0f);
+        }
     }
 
     // 마우스 휠로 Grid 확대,축소
