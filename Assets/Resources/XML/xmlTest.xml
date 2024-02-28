@@ -8,15 +8,21 @@
   </tempo>
   <note_list>
     <track idx="3">
+      <note tick="0" />
       <note tick="1536" />
     </track>
     <track idx="4">
+      <note tick="384" />
+      <note tick="2304" />
       <note tick="3072" />
     </track>
     <track idx="5">
+      <note tick="2688" />
       <note tick="4608" />
     </track>
     <track idx="6">
+      <note tick="1152" />
+      <note tick="2304" />
       <note tick="6144" />
     </track>
   </note_list>

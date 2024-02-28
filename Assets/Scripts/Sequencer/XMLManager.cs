@@ -32,6 +32,8 @@ public class XMLManager : MonoBehaviour
 
     public void SaveXML()
     {
+        SortNotes();
+
         // Xml 선언(버전, 인코딩 방식 설정)
         XmlDocument doc = new XmlDocument();
         doc.AppendChild(doc.CreateXmlDeclaration("1.0", "utf-8", "no"));
@@ -118,6 +120,8 @@ public class XMLManager : MonoBehaviour
         // 트랙 별 노트 정보 불러오기
         XmlElement noteList = nodes["note_list"];
 
+        ClearNotes();
+
         for (int i = 0; i < 4; i++)
         {
             XmlNodeList trackNodes = noteList.ChildNodes;
@@ -154,6 +158,21 @@ public class XMLManager : MonoBehaviour
         }
     }
 
+    private void SortNotes()
+    {
+        foreach (List<int> track in tracks)
+        {
+            track.Sort();
+        }
+    }
+
+    private void ClearNotes()
+    {
+        foreach (List<int> track in tracks)
+        {
+            track.Clear();
+        }
+    }
 }
 
 [System.Serializable]
