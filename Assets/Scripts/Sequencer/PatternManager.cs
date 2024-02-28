@@ -5,7 +5,7 @@ using TMPro;
 
 public class PatternManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _grid;
+    [SerializeField] private GameObject _bars;
     [SerializeField] private GameObject _notes;
 
     private XMLManager _xml;
@@ -48,7 +48,7 @@ public class PatternManager : MonoBehaviour
         {
             TextMeshProUGUI barNum = _bar.GetComponentInChildren<TextMeshProUGUI>();
             barNum.text = "bar " + i.ToString();
-            Instantiate(_bar, new Vector3(0f, 640f * i, 0f), Quaternion.identity, _grid.transform);
+            Instantiate(_bar, new Vector3(0f, 640f * i, 0f), Quaternion.identity, _bars.transform);
         }
     }
 
