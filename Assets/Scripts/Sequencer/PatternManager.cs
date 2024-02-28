@@ -17,7 +17,7 @@ public class PatternManager : MonoBehaviour
     private GameObject _noteBlue;
     private GameObject _noteOrange;
 
-    private int tpm;
+    private int tpm; // Default = 1536 ticks per 1 bar
     private int totalBar;
     private float hpt; // heights per tick = 640 / 1536
 
@@ -34,7 +34,7 @@ public class PatternManager : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -50,6 +50,8 @@ public class PatternManager : MonoBehaviour
 
     public void LoadXmlSequence()
     {
+        DestroyAllLoadedObjects();
+        LoadDefaultSettings();
         _xml.LoadXML();
         InitParameters();
         MakeBars();
@@ -58,7 +60,7 @@ public class PatternManager : MonoBehaviour
 
     private void InitParameters()
     {
-        tpm = _xml.songInfos.tpm; // Default = 1536 ticks per 1 bar
+        tpm = _xml.songInfos.tpm;
         totalBar = _xml.songInfos.endTick / tpm;
         hpt = 640f / tpm;
     }
@@ -134,15 +136,53 @@ public class PatternManager : MonoBehaviour
                 float x = -240f + (160f * i);
                 float y = -320f + tick * hpt;
 
-                if (i == 0 || i == 3)
+                if (i == 0 || i == 3) // 1번, 4번 트랙은 파란색 노트 생성
                 {
                     Instantiate(_noteBlue, new Vector3(x, y, 0f), Quaternion.identity, _notes.transform);
                 }
-                else
+                else // 2번, 3번 트랙은 주황색 노트 생성
                 {
                     Instantiate(_noteOrange, new Vector3(x, y, 0f), Quaternion.identity, _notes.transform);
                 }
             }
         }
+    }
+
+    private void DestroyAllLoadedObjects()
+    {
+        // 불러온 모든 note와 bar 제거
+
+        if (_bars.transform.childCount != 0) // _bars 에게 자식이 있다면
+        {
+            Transform[] allBars = _bars.GetComponentsInChildren<Transform>();
+
+            foreach (Transform child in allBars)
+            {
+                if (child.name == _bars.name) // _bars 자기 자신은 제외
+                    continue;
+
+                Destroy(child.gameObject);
+            }
+        }
+
+        if (_notes.transform.childCount != 0) // _notes 에게 자식이 있다면
+        {
+            Transform[] allNotes = _notes.GetComponentsInChildren<Transform>();
+
+            foreach (Transform child in allNotes)
+            {
+                if (child.name == _notes.name) // _notes 자기 자신은 제외
+                    continue;
+
+                Destroy(child.gameObject);
+            }
+        }
+
+    }
+
+    private void LoadDefaultSettings()
+    {
+        _grid.transform.position = Vector3.zero;
+        _grid.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 }

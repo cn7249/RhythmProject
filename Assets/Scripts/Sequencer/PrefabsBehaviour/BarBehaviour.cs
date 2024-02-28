@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class BarBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public int CurrentBarNum 
+    public int CurrentBarNum // 현재 Bar의 순번을 return 합니다.
     { 
         get { return int.Parse(_currentBarTxt.text.Replace("bar ", "")); }
     }
