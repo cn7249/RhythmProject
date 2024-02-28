@@ -2,13 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridBtnsPreset : MonoBehaviour
+public class InputPreset : MonoBehaviour
 {
-    [SerializeField] private GameObject _beat4;
-    [SerializeField] private GameObject _beat8;
-    [SerializeField] private GameObject _beat12;
-    [SerializeField] private GameObject _beat16;
-
     private GameObject _gridBtn;
     private GameObject _line;
 
@@ -18,16 +13,7 @@ public class GridBtnsPreset : MonoBehaviour
         _line = Resources.Load<GameObject>("Prefabs/Sequencer/Line");
     }
 
-    private void Start()
-    {
-        MakeBeatGrid(4f, _beat4.transform);
-        MakeBeatGrid(8f, _beat8.transform);
-        MakeBeatGrid(12f, _beat12.transform);
-        MakeBeatGrid(16f, _beat16.transform);
-        SetAllPresetsActive(false);
-    }
-
-    private void MakeBeatGrid(float beat, Transform parent)
+    public void MakeBeatGrid(float beat, Transform parent)
     {
         float height = 640f / beat;
 
@@ -39,8 +25,8 @@ public class GridBtnsPreset : MonoBehaviour
                 float x = -240f + (160f * j);
                 float y = -320f + (height * i);
                 Vector3 pos = new Vector3(x, y, 0f);
-                
-                _gridBtn.transform.localScale = new Vector3(1f, 4f/ beat, 1f);
+
+                _gridBtn.transform.localScale = new Vector3(1f, 4f / beat, 1f);
 
                 Instantiate(_gridBtn, pos, Quaternion.identity, parent);
             }
@@ -51,13 +37,5 @@ public class GridBtnsPreset : MonoBehaviour
                 Instantiate(_line, new Vector3(0f, -320f + (height * i), 0f), Quaternion.identity, parent);
             }
         }
-    }
-
-    private void SetAllPresetsActive(bool isTrue)
-    {
-        _beat4.SetActive(isTrue);
-        _beat8.SetActive(isTrue);
-        _beat12.SetActive(isTrue);
-        _beat16.SetActive(isTrue);
     }
 }
