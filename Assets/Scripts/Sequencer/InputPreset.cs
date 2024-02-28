@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InputPreset : MonoBehaviour
 {
+    // Beat 입력 프리셋 제조기입니다. 필요하면 쓰시면 됩니다.
+
     private GameObject _gridBtn;
     private GameObject _line;
 
