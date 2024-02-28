@@ -73,7 +73,7 @@ public class BarBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         if (!isPresetExists)
         {
-            Instantiate(_beat4, transform); // 비트 변경 기능 추가 시 여기 수정할 것
+            InstantiatePreset();
             isPresetExists = true;
         }
     }
@@ -84,6 +84,27 @@ public class BarBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         {
             Destroy(transform.GetChild(3).gameObject);
             isPresetExists = false;
+        }
+    }
+
+    void InstantiatePreset()
+    {
+        BeatType type = PatternManager.Instance.BeatType;
+
+        switch (type)
+        {
+            case BeatType.beat4:
+                Instantiate(_beat4, transform);
+                break;
+            case BeatType.beat8:
+                Instantiate(_beat8, transform);
+                break;
+            case BeatType.beat12:
+                Instantiate(_beat12, transform);
+                break;
+            case BeatType.beat16:
+                Instantiate(_beat16, transform);
+                break;
         }
     }
 

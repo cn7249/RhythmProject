@@ -16,6 +16,7 @@ public class PatternManager : MonoBehaviour
     public int GetCurrentBar { get; set; }
     public int GetTotalBar { get { return totalBar; } }
     public float GetGridScale { get { return _grid.transform.localScale.y; } }
+    public BeatType BeatType { get; set; }
 
     private XMLManager _xml;
     private GameObject _bar;
@@ -216,4 +217,12 @@ public class PatternManager : MonoBehaviour
         _grid.transform.position = Vector3.zero;
         _grid.transform.localScale = new Vector3(1f, 1f, 1f);
     }
+}
+
+public enum BeatType
+{
+    beat4,
+    beat8,
+    beat12,
+    beat16
 }
