@@ -10,18 +10,46 @@
     <track idx="3">
       <note tick="0" />
       <note tick="1536" />
+      <note tick="4224" />
+      <note tick="5760" />
     </track>
     <track idx="4">
       <note tick="384" />
       <note tick="1920" />
+      <note tick="3840" />
+      <note tick="5376" />
+      <note tick="6528" />
+      <note tick="7296" />
+      <note tick="8064" />
+      <note tick="8832" />
+      <note tick="9600" />
+      <note tick="10368" />
+      <note tick="11136" />
+      <note tick="11904" />
     </track>
     <track idx="5">
       <note tick="768" />
       <note tick="2304" />
+      <note tick="3456" />
+      <note tick="4992" />
+      <note tick="6144" />
+      <note tick="6912" />
+      <note tick="7680" />
+      <note tick="8448" />
+      <note tick="9216" />
+      <note tick="9984" />
+      <note tick="10752" />
+      <note tick="11520" />
     </track>
     <track idx="6">
       <note tick="1152" />
       <note tick="2688" />
+      <note tick="3072" />
+      <note tick="4608" />
+      <note tick="6912" />
+      <note tick="8448" />
+      <note tick="9984" />
+      <note tick="11520" />
     </track>
   </note_list>
 </root>

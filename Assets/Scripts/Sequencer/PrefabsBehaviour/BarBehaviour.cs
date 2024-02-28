@@ -56,6 +56,7 @@ public class BarBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             if (isPointerIn)
             {
                 _barImage.color = redColor;
+                PatternManager.Instance.GetCurrentBar = CurrentBarNum;
                 CreatePreset();
             }
             else
@@ -68,11 +69,11 @@ public class BarBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     void CreatePreset()
     {
-        isPresetExists = this.transform.childCount > 3 ? true : false;
+        isPresetExists = transform.childCount > 3 ? true : false;
 
         if (!isPresetExists)
         {
-            Instantiate(_beat4, this.transform);
+            Instantiate(_beat4, transform); // 비트 변경 기능 추가 시 여기 수정할 것
             isPresetExists = true;
         }
     }
@@ -81,7 +82,7 @@ public class BarBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         if (isPresetExists)
         {
-            Destroy(this.transform.GetChild(3).gameObject);
+            Destroy(transform.GetChild(3).gameObject);
             isPresetExists = false;
         }
     }
