@@ -40,8 +40,17 @@ public class PatternManager : MonoBehaviour
 
     private void Start()
     {
+        
+    }
+
+    public void SaveXmlSequence()
+    {
+        _xml.SaveXML();
+    }
+
+    public void LoadXmlSequence()
+    {
         _xml.LoadXML();
-        _xml.PrintList();
         InitParameters();
         MakeBars();
         MakeNotes();
