@@ -26,8 +26,6 @@
       <note tick="11136" />
       <note tick="11520" />
       <note tick="11903" />
-      <note tick="12288" />
-      <note tick="13440" />
     </track>
     <track idx="4">
       <note tick="384" />
@@ -58,9 +56,6 @@
       <note tick="11648" />
       <note tick="11903" />
       <note tick="12031" />
-      <note tick="12480" />
-      <note tick="13248" />
-      <note tick="13632" />
     </track>
     <track idx="5">
       <note tick="768" />
@@ -91,8 +86,6 @@
       <note tick="11392" />
       <note tick="11776" />
       <note tick="12160" />
-      <note tick="12672" />
-      <note tick="13056" />
     </track>
     <track idx="6">
       <note tick="1152" />
@@ -117,7 +110,6 @@
       <note tick="11648" />
       <note tick="11903" />
       <note tick="12031" />
-      <note tick="12864" />
     </track>
   </note_list>
 </root>
