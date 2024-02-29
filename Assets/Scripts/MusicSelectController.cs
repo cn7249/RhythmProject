@@ -35,6 +35,7 @@ namespace IntroUIScene
             albumImage.sprite = imageSource;
             musicTitle.text = data.MusicTitle;
             artistName.text = data.ArtistName;
+            
         }
 
         private void GetMusicData()

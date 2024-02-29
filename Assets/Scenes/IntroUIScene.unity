@@ -1123,6 +1123,7 @@ GameObject:
   - component: {fileID: 942668859}
   - component: {fileID: 942668858}
   - component: {fileID: 942668857}
+  - component: {fileID: 942668862}
   m_Layer: 5
   m_Name: IntroUIBackgroundCanvas
   m_TagString: Untagged
@@ -1234,7 +1235,131 @@ MonoBehaviour:
   albumImage: {fileID: 1916855792}
   musicTitle: {fileID: 491400955}
   artistName: {fileID: 1254921183}
-  musicDatas: []
+  musicDatas:
+  - ArtistName: AOA
+    MusicTitle: "\uC9E7\uC740\uCE58\uB9C8"
+    ImgPathInfo: Images/MusicImages/miniskirt
+    MusicPathInfo: Musics/miniskirt
+  - ArtistName: "\uC120\uBBF8"
+    MusicTitle: "24\uC2DC\uAC04\uC774 \uBAA8\uC790\uB77C"
+    ImgPathInfo: Images/MusicImages/less24h
+    MusicPathInfo: Musics/less24
+  - ArtistName: "\uB808\uB4DC\uBCA8\uBCB3"
+    MusicTitle: "\uC544\uC774\uC2A4\uD06C\uB9BC\uCF00\uC775"
+    ImgPathInfo: Images/MusicImages/icecake
+    MusicPathInfo: Musics/icecake
+  - ArtistName: "\uB808\uB4DC\uBCA8\uBCB3"
+    MusicTitle: "\uB7EC\uC2DC\uC548\uB8F0\uB81B"
+    ImgPathInfo: Images/MusicImages/russian
+    MusicPathInfo: Musics/russian
+  - ArtistName: NiziU
+    MusicTitle: Look At Me
+    ImgPathInfo: Images/MusicImages/lookatme
+    MusicPathInfo: Musics/lookatme
+  - ArtistName: AOA
+    MusicTitle: "\uC2EC\uCFF5\uD574"
+    ImgPathInfo: Images/MusicImages/simkoong
+    MusicPathInfo: Musics/simkoong
+  - ArtistName: AOA
+    MusicTitle: "\uB2E8\uBC1C\uBA38\uB9AC"
+    ImgPathInfo: Images/MusicImages/shortcut
+    MusicPathInfo: Musics/shortcut
+--- !u!82 &942668862
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942668856}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1177478039
 GameObject:
   m_ObjectHideFlags: 0
