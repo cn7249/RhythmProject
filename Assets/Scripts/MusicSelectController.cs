@@ -17,25 +17,40 @@ namespace IntroUIScene
         [SerializeField] private TMP_Text musicTitle;
         [SerializeField] private TMP_Text artistName;
         private Sprite imageSource;
+        private AudioSource _audioSource;
+        private AudioClip audioClip;
+        private MusicSelectController _musicData;
         
         
         // Start is called before the first frame update
         void Start()
         {
             GetMusicData();
+            _audioSource = GetComponent<AudioSource>();
+            
         }
         
         
 
         public void ClickOnce(MusicData data)
         {
+            if (audioClip != null)
+            {
+                AudioStop();
+            }
             imageSource = Resources.Load<Sprite>($"{data.ImgPathInfo}");
             Debug.Log($"{data.ImgPathInfo}");
             // audioSource = Resources.Load<>()
             albumImage.sprite = imageSource;
             musicTitle.text = data.MusicTitle;
             artistName.text = data.ArtistName;
-            
+            audioClip = Resources.Load<AudioClip>($"{data.MusicPathInfo}");
+            _audioSource.PlayOneShot(audioClip, 0.7f);
+        }
+
+        public void AudioStop()
+        {
+            _audioSource.Stop();
         }
 
         private void GetMusicData()
