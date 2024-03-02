@@ -46,6 +46,9 @@ namespace IntroUIScene
             artistName.text = data.ArtistName;
             audioClip = Resources.Load<AudioClip>($"{data.MusicPathInfo}");
             _audioSource.PlayOneShot(audioClip, 0.7f);
+
+            // 랭킹 매니저 곡 제목 전달
+            RankingManager.instance.SongName = data.MusicTitle;
         }
 
         public void AudioStop()

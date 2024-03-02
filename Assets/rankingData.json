@@ -1,0 +1,25 @@
+{
+    "RankingMapList": [
+        {
+            "key": "짧은치마",
+            "values": [
+                {
+                    "userName": "test1",
+                    "score": 150
+                },
+                {
+                    "userName": "test2",
+                    "score": 100
+                },
+                {
+                    "userName": "test1",
+                    "score": 10
+                },
+                {
+                    "userName": "test3",
+                    "score": 10
+                }
+            ]
+        }
+    ]
+}
