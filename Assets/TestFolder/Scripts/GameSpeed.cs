@@ -17,7 +17,7 @@ public class GameSpeed : MonoBehaviour
     {
         if (!speedBool)
         {
-            GameManager.instance.GameSpeedChange(2);
+            GameManager.instance.GameSpeedChange(5);
             speedBool = true;
         }
         else

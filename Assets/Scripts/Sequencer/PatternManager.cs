@@ -121,6 +121,7 @@ public class PatternManager : MonoBehaviour
             }
 
             _xml.tracks[index].Add(tick);
+            Debug.Log("노트 생성했음");
         }
 
     }
@@ -133,10 +134,11 @@ public class PatternManager : MonoBehaviour
         int tick = (int)((yPos + 320f) * (1 / hpt));
         bool isNoteExists = _xml.tracks[index].Contains(tick);
 
+        Debug.Log(isNoteExists);
         if (isNoteExists)
         {
-            _xml.tracks[index].Remove(tick);
             Destroy(note);
+            _xml.tracks[index].Remove(tick);
         }
     }
 

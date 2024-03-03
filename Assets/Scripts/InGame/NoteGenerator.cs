@@ -29,7 +29,7 @@ public class NoteGenerator : MonoBehaviour
 
     private void Start()
     {
-        LoadNotes("xmlTest2.xml");
+        LoadNotes("judgeTest.xml");
     }
 
     //private void Update()
