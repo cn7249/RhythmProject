@@ -36,7 +36,7 @@ public class Judge : MonoBehaviour
         }
 		// good 판정 범위 안에 노트가 있으면
 		var obj = queue.Dequeue();
-        float objY = obj.GetComponent<NoteBehaviour>().beginPos - judgePosY;
+        float objY = obj.transform.position.y - judgePosY;
 
         if (objY > -good * GameManager.instance.gameSpeed && objY < good * GameManager.instance.gameSpeed)
 		{

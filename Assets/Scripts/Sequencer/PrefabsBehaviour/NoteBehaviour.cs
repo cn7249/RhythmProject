@@ -8,7 +8,7 @@ public class NoteBehaviour : MonoBehaviour, IPointerDownHandler
 {
     private Vector3 _pos;
 
-    public float beginPos;
+    public float posY;
     public float hps;
     public int index;
     private float good;
@@ -42,11 +42,11 @@ public class NoteBehaviour : MonoBehaviour, IPointerDownHandler
     private void Update()
     {
         float speed = hps * Time.deltaTime * gameSpeed;
-        beginPos = trans.position.y;
+        posY = trans.position.y;
 
         trans.position -= new Vector3(0f, speed, 0f);
 
-        if (beginPos - judgePosY < - good * gameSpeed)
+        if (posY - judgePosY < - good * gameSpeed)
         {
             var queue = GameManager.instance.queues[index];
             if (this.gameObject == queue.Peek().gameObject)
@@ -61,7 +61,7 @@ public class NoteBehaviour : MonoBehaviour, IPointerDownHandler
 
     private void ChangeSpeed(float speed)
     {
-        var posY = (beginPos - judgePosY) * speed / gameSpeed + judgePosY - beginPos;
+        var posY = (this.posY - judgePosY) * speed / gameSpeed + judgePosY - this.posY;
         trans.position += new Vector3(0, posY, 0);
         gameSpeed = speed;
     }
