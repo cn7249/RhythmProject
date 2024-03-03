@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ public class NoteGenerator : MonoBehaviour
     private float tempo;
     private float hps;
 
+
     private void Awake()
     {
         _xml = GetComponent<XMLManager>();
@@ -30,16 +32,16 @@ public class NoteGenerator : MonoBehaviour
         LoadNotes("xmlTest2.xml");
     }
 
-    private void Update()
-    {
-        MoveNotes();
-    }
-
-    private void MoveNotes()
-    {
-        float speed = hps * Time.deltaTime;
-        _notes.transform.position -= new Vector3(0f, speed, 0f);
-    }
+    //private void Update()
+    //{
+    //    MoveNotes();
+    //}
+    //
+    //private void MoveNotes()
+    //{
+    //    float speed = hps * Time.deltaTime * GameManager.instance.gameSpeed;
+    //    _notes.transform.position -= new Vector3(0f, speed, 0f);
+    //}
 
     public bool LoadNotes(string fileName)
     {
@@ -78,13 +80,23 @@ public class NoteGenerator : MonoBehaviour
 
                 if (i == 0 || i == 3) // 1번, 4번 트랙은 파란색 노트 생성
                 {
-                    Instantiate(_noteBlue, new Vector3(x, y, 0f), Quaternion.identity, _notes.transform);
+                    var obj = Instantiate(_noteBlue, new Vector3(x, y, 0f), Quaternion.identity, _notes.transform);
+                    SetNoteInfo(obj, i, y);
                 }
                 else // 2번, 3번 트랙은 주황색 노트 생성
                 {
-                    Instantiate(_noteOrange, new Vector3(x, y, 0f), Quaternion.identity, _notes.transform);
+                    var obj = Instantiate(_noteOrange, new Vector3(x, y, 0f), Quaternion.identity, _notes.transform);
+                    SetNoteInfo(obj, i, y);
                 }
             }
         }
+    }
+
+    private void SetNoteInfo(GameObject obj, int i, float y)
+    {
+        obj.GetComponent<NoteBehaviour>().beginPos = y;
+        obj.GetComponent<NoteBehaviour>().hps = hps;
+        obj.GetComponent<NoteBehaviour>().index = i;
+        GameManager.instance.queues[i].Enqueue(obj);
     }
 }

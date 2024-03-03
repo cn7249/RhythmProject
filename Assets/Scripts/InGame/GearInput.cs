@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class GearInput : MonoBehaviour
@@ -18,6 +19,42 @@ public class GearInput : MonoBehaviour
         activatedColor = new Color(28f / 255f, 202f / 255f, 255f / 255f, 128f / 255f);
     }
 
+    public void OnClickNote0(InputAction.CallbackContext context)
+    {
+        KeyInput(context, 0);
+    }
+
+    public void OnClickNote1(InputAction.CallbackContext context)
+    {
+        KeyInput(context, 1);
+    }
+
+    public void OnClickNote2(InputAction.CallbackContext context)
+    {
+        KeyInput(context, 2);
+    }
+
+    public void OnClickNote3(InputAction.CallbackContext context)
+    {
+        KeyInput(context, 3);
+    }
+
+    private void KeyInput(InputAction.CallbackContext context, int index)
+    {
+        if (context.started)
+        {
+            _lineLights[index].SetActive(true);
+            _keyImgs[index].color = activatedColor;
+            Judge.instance.JudgeNote(index);
+        }
+        else if (context.canceled)
+        {
+            _lineLights[index].SetActive(false);
+            _keyImgs[index].color = defaultColor;
+        }
+    }
+
+    /*
     private void Update()
     {
         KeyInput(0);
@@ -51,5 +88,5 @@ public class GearInput : MonoBehaviour
             default: return KeyCode.None;
         }
     }
-
+    */
 }

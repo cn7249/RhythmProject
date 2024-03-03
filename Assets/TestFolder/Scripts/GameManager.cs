@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,39 +6,71 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+	[SerializeField] private GameObject judgeLine;
 	
-	public Queue<GameObject>[] queue = new Queue<GameObject>[4];
+	public Queue<GameObject>[] queues = new Queue<GameObject>[4];
 	public List<GameObject> lineList = new List<GameObject>();
-	
-	public float speed;
-	
-	private int hp;
-	private int combo;
-	private int score;
+
+	public Action JudgementBad;
+    public Action JudgementGood;
+    public Action JudgementPerfect;
+	public Action<float> GameSpeedChange;
+
+    public float judgePosY;
+	public float gameSpeed;
+
+	public float good;
+	public float perfect;
+
+	public int maxHp;
+	public int badDamage;
+	public int goodHeal;
+	public int perfectHeal;
+	public int goodScore;
+	public int perfectScore;
+
+    public int hp;
+	public int combo;
+	public int score;
 	
 	private void Awake()
 	{
 		instance = this;
-	}
-	
-	public void JudgementBad()
-	{
-		
-	}
-	
-	public void JudgementGood()
-	{
-		
-	}
-	
-	public void JudgementPerfect()
-	{
-		
-	}
-	
-	
-	public void OnClickTest()
-	{
-		Debug.Log(lineList.Count);
-	}
+		for (int i = 0; i < queues.Length; i++)
+		{
+			queues[i] = new Queue<GameObject>();
+		}
+        judgePosY = judgeLine.transform.position.y;
+
+        JudgementBad += Bad;
+        JudgementGood += Good;
+        JudgementPerfect += Perfect;
+
+		hp = maxHp;
+    }
+
+    private void Bad()
+    {
+        Debug.Log("¹èµå");
+        hp = Mathf.Max(hp - badDamage, 0);
+		combo = 0;
+    }
+
+	private void Good()
+    {
+        Debug.Log("±Â");
+        hp = Mathf.Min(hp + goodHeal, maxHp);
+		combo++;
+		score += goodScore;
+    }
+
+	private void Perfect()
+    {
+        Debug.Log("ÆÛÆå");
+        hp = Mathf.Min(hp + perfectHeal, maxHp);
+        combo++;
+        score += perfectScore;
+    }
+
 }
