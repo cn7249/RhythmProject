@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+  <header>
+    <songinfo tempo="150" tpm="1536" start_tick="0" end_tick="135168" tick="135168" ms="140800" tps="960" />
+  </header>
+  <tempo>
+    <tempo tick="0" tempo="150" tps="960" />
+  </tempo>
+  <note_list>
+    <track idx="3">
+      <note tick="0" />
+      <note tick="1536" />
+      <note tick="3072" />
+      <note tick="3840" />
+      <note tick="4608" />
+      <note tick="5376" />
+      <note tick="6144" />
+      <note tick="6912" />
+      <note tick="7680" />
+      <note tick="8448" />
+      <note tick="9216" />
+      <note tick="9984" />
+      <note tick="10752" />
+      <note tick="11520" />
+      <note tick="12288" />
+      <note tick="13056" />
+      <note tick="13824" />
+    </track>
+    <track idx="4">
+      <note tick="0" />
+      <note tick="1536" />
+      <note tick="3456" />
+      <note tick="4224" />
+      <note tick="4992" />
+      <note tick="5760" />
+      <note tick="6528" />
+      <note tick="7296" />
+      <note tick="8064" />
+      <note tick="8832" />
+      <note tick="9600" />
+      <note tick="10368" />
+      <note tick="11136" />
+      <note tick="11904" />
+      <note tick="12672" />
+      <note tick="13440" />
+      <note tick="13824" />
+    </track>
+    <track idx="5">
+      <note tick="0" />
+      <note tick="1536" />
+      <note tick="3456" />
+      <note tick="4224" />
+      <note tick="4992" />
+      <note tick="5760" />
+      <note tick="6528" />
+      <note tick="7296" />
+      <note tick="8064" />
+      <note tick="8832" />
+      <note tick="9600" />
+      <note tick="10368" />
+      <note tick="11136" />
+      <note tick="11904" />
+      <note tick="12672" />
+      <note tick="13440" />
+      <note tick="13824" />
+    </track>
+    <track idx="6">
+      <note tick="0" />
+      <note tick="1536" />
+      <note tick="13824" />
+    </track>
+  </note_list>
+</root>

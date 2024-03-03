@@ -27,7 +27,7 @@ public class NoteGenerator : MonoBehaviour
 
     private void Start()
     {
-        LoadNotes("xmlTest2.xml");
+        LoadNotes("bpm150.xml");
     }
 
     private void Update()
