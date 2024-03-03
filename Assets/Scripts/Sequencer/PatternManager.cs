@@ -31,8 +31,8 @@ public class PatternManager : MonoBehaviour
     {
         _xml = GetComponent<XMLManager>();
         _bar = Resources.Load<GameObject>("Prefabs/Sequencer/Bar");
-        _noteBlue = Resources.Load<GameObject>("Prefabs/Notes/NoteBlue");
-        _noteOrange = Resources.Load<GameObject>("Prefabs/Notes/NoteOrange");
+        _noteBlue = Resources.Load<GameObject>("Prefabs/Notes/NoteBluePS");
+        _noteOrange = Resources.Load<GameObject>("Prefabs/Notes/NoteOrangePS");
 
         if (Instance == null)
         {
