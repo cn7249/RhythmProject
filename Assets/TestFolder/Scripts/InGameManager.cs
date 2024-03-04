@@ -34,6 +34,8 @@ public class InGameManager : MonoBehaviour
     public int hp;
 	public int combo;
 	public int score;
+
+	private UI_JudgeEffects _fx;
 	
 	private void Awake()
 	{
@@ -49,6 +51,8 @@ public class InGameManager : MonoBehaviour
         JudgementPerfect += Perfect;
 
 		hp = maxHp;
+
+		_fx = GetComponent<UI_JudgeEffects>();
 
 		//songXML = GameManager.Instance.songName;
 		//gameSpeed = GameManager.Instance.gameSpeed;
@@ -67,6 +71,7 @@ public class InGameManager : MonoBehaviour
     {
         hp = Mathf.Max(hp - badDamage, 0);
 		combo = 0;
+		_fx.SetActiveBadFX();
     }
 
 	private void Good()
@@ -74,6 +79,7 @@ public class InGameManager : MonoBehaviour
         hp = Mathf.Min(hp + goodHeal, maxHp);
 		combo++;
 		score += goodScore;
+		_fx.SetActiveGoodFX();
     }
 
 	private void Perfect()
@@ -81,6 +87,7 @@ public class InGameManager : MonoBehaviour
         hp = Mathf.Min(hp + perfectHeal, maxHp);
         combo++;
         score += perfectScore;
+		_fx.SetActivePerfectFX();
     }
 
 }
