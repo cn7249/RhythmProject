@@ -22,13 +22,18 @@ public class UIResultBoard : UIBase
         CloseUI();
     }
 
+    public void SetScore(int score)
+    {
+        this.score.text = score.ToString();
+    }
+
     private void SaveScore()
     {
-        string musicPathInfo = GameManager.Instance.songName;
+        string songName = GameManager.Instance.songName;
         string userName = this.userName.text;
         int score = int.Parse(this.score.text);
 
-        GameManager.Instance.Ranking.AddRankingEntry(musicPathInfo, userName, score);
+        GameManager.Instance.Ranking.AddRankingEntry(songName, userName, score);
 
         SceneManager.LoadScene("IntroUIScene");
     }

@@ -46,7 +46,9 @@ public class RankingManager : SingletoneBase<RankingManager>
         {
             rankingMap.Add(songName, new List<RankingEntry>() { newRankingEntry });
         }
-              
+
+        SaveRankingMap();
+
         Debug.Log(rankingMap);
     }
     #endregion

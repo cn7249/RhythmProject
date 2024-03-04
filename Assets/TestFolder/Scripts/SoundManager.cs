@@ -29,6 +29,10 @@ public class SoundManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
+        GameObject resultBoard = UIManager.Instance.GetUI<UIResultBoard>();
+        int nowScore = InGameManager.instance.score;
+
+        resultBoard.GetComponent<UIResultBoard>().SetScore(nowScore);
         UIManager.Instance.ShowUI<UIResultBoard>();
     }
 }

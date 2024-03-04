@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PatternSequencer.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/IntroUIScene.unity
+    guid: c706fdfb9cf024868b97e51fcc8f78c2
+  - enabled: 1
+    path: Assets/Scenes/InGameScene.unity
+    guid: bd7eee2f70572b84090e62bbd43abed4
   m_configObjects: {}
