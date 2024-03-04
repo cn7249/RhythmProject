@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+  <header>
+    <songinfo tempo="150" tpm="1536" start_tick="0" end_tick="135168" tick="135168" ms="140800" tps="960" />
+  </header>
+  <tempo>
+    <tempo tick="0" tempo="150" tps="960" />
+  </tempo>
+  <note_list>
+    <track idx="3">
+      <note tick="3072" />
+      <note tick="4608" />
+      <note tick="6144" />
+      <note tick="8448" />
+      <note tick="8832" />
+      <note tick="9216" />
+      <note tick="10752" />
+      <note tick="12288" />
+      <note tick="18432" />
+      <note tick="21120" />
+      <note tick="21504" />
+      <note tick="22272" />
+      <note tick="23040" />
+      <note tick="23424" />
+      <note tick="23808" />
+      <note tick="24192" />
+      <note tick="24576" />
+    </track>
+    <track idx="4">
+      <note tick="5376" />
+      <note tick="5760" />
+      <note tick="7680" />
+      <note tick="9600" />
+      <note tick="10368" />
+      <note tick="13056" />
+      <note tick="13824" />
+      <note tick="15744" />
+      <note tick="16512" />
+      <note tick="17280" />
+      <note tick="18048" />
+      <note tick="18816" />
+      <note tick="20736" />
+      <note tick="21888" />
+      <note tick="22656" />
+      <note tick="23232" />
+      <note tick="23616" />
+      <note tick="24000" />
+      <note tick="24384" />
+    </track>
+    <track idx="5">
+      <note tick="3840" />
+      <note tick="4224" />
+      <note tick="6912" />
+      <note tick="7296" />
+      <note tick="7680" />
+      <note tick="9984" />
+      <note tick="10752" />
+      <note tick="12672" />
+      <note tick="13440" />
+      <note tick="15360" />
+      <note tick="16128" />
+      <note tick="16896" />
+      <note tick="17664" />
+      <note tick="19200" />
+      <note tick="20352" />
+      <note tick="21888" />
+      <note tick="22656" />
+      <note tick="23232" />
+      <note tick="23616" />
+      <note tick="24000" />
+      <note tick="24384" />
+    </track>
+    <track idx="6">
+      <note tick="3072" />
+      <note tick="4608" />
+      <note tick="6144" />
+      <note tick="8448" />
+      <note tick="8832" />
+      <note tick="9216" />
+      <note tick="12288" />
+      <note tick="13824" />
+      <note tick="19584" />
+      <note tick="19968" />
+      <note tick="21504" />
+      <note tick="22272" />
+      <note tick="23040" />
+      <note tick="23424" />
+      <note tick="23808" />
+      <note tick="24192" />
+      <note tick="24576" />
+    </track>
+  </note_list>
+</root>

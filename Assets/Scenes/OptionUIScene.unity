@@ -123,7 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<<< HEAD:Assets/Scenes/InGame.unity
+--- !u!1 &1592138273
+========
 --- !u!1 &787725390
+>>>>>>>> Pattern-Sequencer-Choo:Assets/Scenes/OptionUIScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,6 +135,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<<< HEAD:Assets/Scenes/InGame.unity
+  - component: {fileID: 1592138276}
+  - component: {fileID: 1592138275}
+  - component: {fileID: 1592138274}
+========
   - component: {fileID: 787725393}
   - component: {fileID: 787725392}
   - component: {fileID: 787725391}
@@ -202,6 +211,7 @@ GameObject:
   - component: {fileID: 2052287087}
   - component: {fileID: 2052287086}
   - component: {fileID: 2052287085}
+>>>>>>>> Pattern-Sequencer-Choo:Assets/Scenes/OptionUIScene.unity
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -209,21 +219,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<<< HEAD:Assets/Scenes/InGame.unity
+--- !u!81 &1592138274
+========
 --- !u!81 &2052287085
+>>>>>>>> Pattern-Sequencer-Choo:Assets/Scenes/OptionUIScene.unity
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Assets/Scenes/InGame.unity
+  m_GameObject: {fileID: 1592138273}
+  m_Enabled: 1
+--- !u!20 &1592138275
+========
   m_GameObject: {fileID: 2052287084}
   m_Enabled: 1
 --- !u!20 &2052287086
+>>>>>>>> Pattern-Sequencer-Choo:Assets/Scenes/OptionUIScene.unity
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Assets/Scenes/InGame.unity
+  m_GameObject: {fileID: 1592138273}
+========
   m_GameObject: {fileID: 2052287084}
+>>>>>>>> Pattern-Sequencer-Choo:Assets/Scenes/OptionUIScene.unity
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -268,13 +292,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+<<<<<<<< HEAD:Assets/Scenes/InGame.unity
+--- !u!4 &1592138276
+========
 --- !u!4 &2052287087
+>>>>>>>> Pattern-Sequencer-Choo:Assets/Scenes/OptionUIScene.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Assets/Scenes/InGame.unity
+  m_GameObject: {fileID: 1592138273}
+========
   m_GameObject: {fileID: 2052287084}
+>>>>>>>> Pattern-Sequencer-Choo:Assets/Scenes/OptionUIScene.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
