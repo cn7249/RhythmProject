@@ -10,7 +10,8 @@ public class UIManager : SingletoneBase<UIManager>
 
     public override void Init()
     {
-        UIDictionary.Add("UIRankingBoard", Util.Instantiate<UIRankingBoard>("Prefabs/UI"));
+        UIDictionary.Add("UIRankingBoard", Util.Instantiate<UIRankingBoard>("Prefabs/UI", transform));
+        UIDictionary.Add("UIResultBoard", Util.Instantiate<UIResultBoard>("Prefabs/UI", transform));
     }
 
     public GameObject GetUI<T>() where T : UIBase

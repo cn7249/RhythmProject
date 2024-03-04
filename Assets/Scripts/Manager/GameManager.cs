@@ -7,15 +7,15 @@ public class GameManager : SingletoneBase<GameManager>
 {
 	public UIManager UI;
 	public RankingManager Ranking;
-	
-	private void Awake()
-	{
-		//base.Awake();
-    }
+
+    public string songName;
+    public int gameSpeed = 1;
 
     public override void Init()
     {
         UI = UIManager.Instance;
 		Ranking = RankingManager.Instance;
+
+        songName = string.Empty;
     }
 }
