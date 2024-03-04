@@ -20,7 +20,8 @@ namespace IntroUIScene // 폴더링, 그룹화 역할 표면상
         private Sprite imageSource;
         private MusicData _musicData;
         private MusicSelectController _controller;
-        private MusicData curMusicData;
+        private string curMusicData;
+        private int count;
 
         public void Init(MusicData data, MusicSelectController controller)
         {
@@ -35,14 +36,18 @@ namespace IntroUIScene // 폴더링, 그룹화 역할 표면상
 
         public void ButtonClickFunction()
         {
-            _controller.ClickOnce(_musicData);
-
-            if (curMusicData == _musicData)
+            var song = _controller.ClickOnce(_musicData);
+            count++;
+            if (curMusicData == song && count == 2)
             {
                 SceneManager.LoadScene("InGameScene");
                 return;
             }
-            curMusicData = _musicData;
+            else if (curMusicData != song)
+            {
+                count = 0;
+            }
+            curMusicData = song;
         }
     }
 }
