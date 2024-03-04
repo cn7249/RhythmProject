@@ -36,5 +36,7 @@ public class UIResultBoard : UIBase
         GameManager.Instance.Ranking.AddRankingEntry(songName, userName, score);
 
         SceneManager.LoadScene("IntroUIScene");
+
+        CloseUI();
     }
 }
