@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
-{
-    public static GameManager instance;
-	
+public class GameManager : SingletoneBase<GameManager>
+{	
 	public Queue<GameObject>[] queue = new Queue<GameObject>[4];
 	public List<GameObject> lineList = new List<GameObject>();
 	
@@ -14,13 +12,17 @@ public class GameManager : MonoBehaviour
 	private int hp;
 	private int combo;
 	private int score;
-	
-	private void Awake()
-	{
-		instance = this;
-	}
-	
-	public void JudgementBad()
+
+	public UIManager UI;
+	public RankingManager Ranking;
+
+    public override void Init()
+    {
+        UI = UIManager.Instance;
+		Ranking = RankingManager.Instance;
+    }
+
+    public void JudgementBad()
 	{
 		
 	}
