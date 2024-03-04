@@ -22,6 +22,11 @@ public class UIResultBoard : UIBase
         CloseUI();
     }
 
+    public void SetScore(int score)
+    {
+        this.score.text = score.ToString();
+    }
+
     private void SaveScore()
     {
         string songName = GameManager.Instance.songName;

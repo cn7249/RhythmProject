@@ -12,6 +12,9 @@ public class UIManager : SingletoneBase<UIManager>
     {
         UIDictionary.Add("UIRankingBoard", Util.Instantiate<UIRankingBoard>("Prefabs/UI", transform));
         UIDictionary.Add("UIResultBoard", Util.Instantiate<UIResultBoard>("Prefabs/UI", transform));
+
+        CloseUI<UIRankingBoard>();
+        CloseUI<UIResultBoard>();
     }
 
     public GameObject GetUI<T>() where T : UIBase

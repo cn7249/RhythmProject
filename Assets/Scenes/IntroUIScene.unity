@@ -172,7 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI: {fileID: 0}
   Ranking: {fileID: 0}
-  songXML: 
+  songName: 
+  gameSpeed: 1
 --- !u!4 &75540346
 Transform:
   m_ObjectHideFlags: 0
