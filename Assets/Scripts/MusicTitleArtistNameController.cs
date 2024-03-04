@@ -18,10 +18,10 @@ namespace IntroUIScene // 폴더링, 그룹화 역할 표면상
         [SerializeField] private TMP_Text musicTitle;
         [SerializeField] private TMP_Text artistName;
         private Sprite imageSource;
-        private int clickCount = 0;
         private MusicData _musicData;
         private MusicSelectController _controller;
-        
+        private MusicData curMusicData;
+
         public void Init(MusicData data, MusicSelectController controller)
         {
             _controller = controller;
@@ -35,20 +35,14 @@ namespace IntroUIScene // 폴더링, 그룹화 역할 표면상
 
         public void ButtonClickFunction()
         {
-            
-                clickCount++;
-                if (clickCount == 1)
-                {
-                    _controller.ClickOnce(_musicData);
-                    
-                }
-                else if (clickCount == 2)
-                {
-                    // 게임실행함수 입력
-                    SceneManager.LoadScene("InGameScene");
-                    clickCount = 0;
-                }
-            
+            _controller.ClickOnce(_musicData);
+
+            if (curMusicData == _musicData)
+            {
+                SceneManager.LoadScene("InGameScene");
+                return;
+            }
+            curMusicData = _musicData;
         }
     }
 }
