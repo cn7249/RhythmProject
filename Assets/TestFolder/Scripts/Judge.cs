@@ -13,6 +13,8 @@ public class Judge : MonoBehaviour
 	private float good;
 	private float perfect;
 
+    private float speed;
+
     private void Awake()
     {
         instance = this;
@@ -23,6 +25,8 @@ public class Judge : MonoBehaviour
         good = GameManager.instance.good;
         perfect = GameManager.instance.perfect;
         judgePosY = GameManager.instance.judgePosY;
+
+        speed = GameManager.instance.gameSpeed;
     }
 
     public void JudgeNote(int index)
@@ -38,10 +42,10 @@ public class Judge : MonoBehaviour
 		var obj = queue.Dequeue();
         float objY = obj.transform.position.y - judgePosY;
 
-        if (objY > -good * GameManager.instance.gameSpeed && objY < good * GameManager.instance.gameSpeed)
+        if (objY > -good * speed && objY < good * speed)
 		{
             // perfect 판정 범위 안에 노트가 있으면 perfect 판정
-            if (objY > -perfect * GameManager.instance.gameSpeed && objY < perfect * GameManager.instance.gameSpeed)
+            if (objY > -perfect * speed && objY < perfect * speed)
             {
                 // to do perfect
                 GameManager.instance.JudgementPerfect();
@@ -62,4 +66,6 @@ public class Judge : MonoBehaviour
 
         Destroy(obj);
 	}
+
+
 }
