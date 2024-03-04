@@ -52,9 +52,10 @@ namespace IntroUIScene
             audioClip = Resources.Load<AudioClip>($"{data.MusicPathInfo}");
             _audioSource.PlayOneShot(audioClip, 0.7f);
 
-            // 랭킹 매니저 곡 제목 전달
-            GameManager.Instance.Ranking.SongName = data.MusicTitle;
-            GameManager.Instance.songName = data.MusicTitle;
+            // 매니저에 곡 제목 전달
+            string song = data.MusicPathInfo.Replace("Musics/", "");
+            GameManager.Instance.Ranking.songName = song;
+            GameManager.Instance.songName = song;
         }
 
         public void AudioStop()

@@ -22,7 +22,7 @@ public class RankingMapWrap
 public class RankingManager : SingletoneBase<RankingManager>
 {    
     public Dictionary<string, List<RankingEntry>> rankingMap = new Dictionary<string, List<RankingEntry>>();
-    public string SongName { get; set; }
+    public string songName { get; set; }
 
 
     public override void Init()
@@ -112,15 +112,15 @@ public class RankingManager : SingletoneBase<RankingManager>
             Destroy(child.gameObject);
         }
 
-        if (SongName == null) return;
+        if (songName == null) return;
 
-        if (rankingMap.ContainsKey(SongName))
+        if (rankingMap.ContainsKey(songName))
         {
-            prevScore = rankingMap[SongName][0].Score;
+            prevScore = rankingMap[songName][0].Score;
 
-            for (int i = 0; i < rankingMap[SongName].Count; ++i)
+            for (int i = 0; i < rankingMap[songName].Count; ++i)
             {
-                RankingEntry rankingEntry = rankingMap[SongName][i];
+                RankingEntry rankingEntry = rankingMap[songName][i];
 
                 if (prevScore != rankingEntry.Score)
                     ++ranking;

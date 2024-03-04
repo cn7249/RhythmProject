@@ -24,11 +24,11 @@ public class UIResultBoard : UIBase
 
     private void SaveScore()
     {
-        string songName = GameManager.Instance.songName;
+        string musicPathInfo = GameManager.Instance.songName;
         string userName = this.userName.text;
         int score = int.Parse(this.score.text);
 
-        GameManager.Instance.Ranking.AddRankingEntry(songName, userName, score);
+        GameManager.Instance.Ranking.AddRankingEntry(musicPathInfo, userName, score);
 
         SceneManager.LoadScene("IntroUIScene");
     }
