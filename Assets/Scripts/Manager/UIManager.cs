@@ -29,8 +29,6 @@ public class UIManager : SingletoneBase<UIManager>
         {
             UIDictionary[UIName].GetComponent<T>().OpenUI();
         }
-
-        
     }
 
     public void CloseUI<T>() where T : UIBase

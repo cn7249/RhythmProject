@@ -6,6 +6,8 @@ using TMPro;
 using UnityEngine.UI;
 using IntroUIScene;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+
 
 namespace IntroUIScene // 폴더링, 그룹화 역할 표면상
 {
@@ -43,6 +45,7 @@ namespace IntroUIScene // 폴더링, 그룹화 역할 표면상
                 else if (clickCount == 2)
                 {
                     // 게임실행함수 입력
+                    SceneManager.LoadScene("InGameScene");
                     clickCount = 0;
                 }
             

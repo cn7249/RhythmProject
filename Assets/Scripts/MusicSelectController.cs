@@ -54,7 +54,7 @@ namespace IntroUIScene
 
             // 랭킹 매니저 곡 제목 전달
             GameManager.Instance.Ranking.SongName = data.MusicTitle;
-            Debug.Log(GameManager.Instance.Ranking.SongName);
+            GameManager.Instance.songName = data.MusicTitle;
         }
 
         public void AudioStop()
