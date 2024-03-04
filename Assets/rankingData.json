@@ -4,6 +4,14 @@
             "key": "shortcut",
             "values": [
                 {
+                    "userName": "dev",
+                    "score": 4980
+                },
+                {
+                    "userName": "dev",
+                    "score": 4250
+                },
+                {
                     "userName": "test1",
                     "score": 150
                 },

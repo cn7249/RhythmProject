@@ -76,7 +76,7 @@ public class NoteGenerator : MonoBehaviour
             foreach (int tick in _xml.tracks[i])
             {
                 float x = -240f + (160f * i);
-                float y = -388f + tick * hpt; // 판정선 기준 bar 2개만큼 위에서 생성
+                float y = -258f + tick * hpt; // 판정선 기준 bar 2개만큼 위에서 생성
 
                 if (i == 0 || i == 3) // 1번, 4번 트랙은 파란색 노트 생성
                 {
