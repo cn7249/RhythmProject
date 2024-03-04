@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public Action JudgementPerfect;
 	public Action<float> GameSpeedChange;
 
+	public string songXML;
+
     public float judgePosY;
 	public float gameSpeed;
 
@@ -32,8 +34,6 @@ public class GameManager : MonoBehaviour
     public int hp;
 	public int combo;
 	public int score;
-
-	public int tps;
 	
 	private void Awake()
 	{

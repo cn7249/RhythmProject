@@ -31,7 +31,7 @@ public class NoteBehaviour : MonoBehaviour, IPointerDownHandler
     {
         judgePosY = GameManager.instance.judgePosY;
         gameSpeed = GameManager.instance.gameSpeed;
-        tps = GameManager.instance.tps / 960f;
+
 
         GameManager.instance.GameSpeedChange += ChangeSpeed;
     }
@@ -72,7 +72,7 @@ public class NoteBehaviour : MonoBehaviour, IPointerDownHandler
     {
         if (Input.GetMouseButtonDown(1))
         {
-            // ¿ìÅ¬¸¯ ½Ã ³ëÆ® Á¦°Å
+            // ï¿½ï¿½Å¬ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
             PatternManager.Instance.DeleteSingleNote(_pos.x, _pos.y, this.gameObject);
         }
     }
