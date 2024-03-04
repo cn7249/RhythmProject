@@ -28,6 +28,6 @@ public class PlayerInfo : MonoBehaviour
 
     private void UpdateGameSpeed(float speed)
     {
-        gameSpeed.text = $"Speed : {speed.ToString("F1")}";
+        gameSpeed.text = $"{speed.ToString("F1")}";
     }
 }
