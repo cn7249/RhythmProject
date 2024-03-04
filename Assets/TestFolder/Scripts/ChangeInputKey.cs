@@ -16,7 +16,7 @@ public class ChangeInputKey : MonoBehaviour
     private void Start()
     {
         changeInputKeyUI = GetComponent<ChangeInputKeyUI>();
-        playerInput = GameManager.instance.GetComponent<PlayerInput>();
+        playerInput = InGameManager.instance.GetComponent<PlayerInput>();
     }
 
     public void ChangeKey(int _index)

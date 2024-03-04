@@ -99,6 +99,6 @@ public class NoteGenerator : MonoBehaviour
         obj.GetComponent<NoteBehaviour>().posY = y;
         obj.GetComponent<NoteBehaviour>().hps = hps;
         obj.GetComponent<NoteBehaviour>().index = i;
-        GameManager.instance.queues[i].Enqueue(obj);
+        InGameManager.instance.queues[i].Enqueue(obj);
     }
 }
