@@ -31,7 +31,7 @@ public class NoteBehaviour : MonoBehaviour, IPointerDownHandler
     {
         judgePosY = GameManager.instance.judgePosY;
         gameSpeed = GameManager.instance.gameSpeed;
-        tps = GameManager.instance.tps / 960;
+        tps = GameManager.instance.tps / 960f;
 
         GameManager.instance.GameSpeedChange += ChangeSpeed;
     }
@@ -43,7 +43,7 @@ public class NoteBehaviour : MonoBehaviour, IPointerDownHandler
 
     private void Update()
     {
-        float speed = hps * Time.deltaTime * gameSpeed * tps;
+        float speed = hps * Time.deltaTime * gameSpeed;
         posY = trans.position.y;
 
         trans.position -= new Vector3(0f, speed, 0f);
