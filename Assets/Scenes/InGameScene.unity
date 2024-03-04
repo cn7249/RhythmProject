@@ -2345,7 +2345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1800565830}
-  - component: {fileID: 1800565829}
+  - component: {fileID: 1800565834}
   - component: {fileID: 1800565831}
   - component: {fileID: 1800565832}
   - component: {fileID: 1800565833}
@@ -2356,33 +2356,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1800565829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800565828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6836d30138480c4a84f9b2a9e172084, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  judgeLine: {fileID: 815894369}
-  songXML: miniskirt
-  judgePosY: 0
-  gameSpeed: 1
-  good: 168
-  perfect: 16.8
-  maxHp: 100
-  badDamage: 5
-  goodHeal: 5
-  perfectHeal: 10
-  goodScore: 5
-  perfectScore: 10
-  hp: 0
-  combo: 0
-  score: 0
 --- !u!4 &1800565830
 Transform:
   m_ObjectHideFlags: 0
@@ -2551,6 +2524,35 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1800565834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800565828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2817cb39cda624ab3698c5ce195201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  judgeLine: {fileID: 815894369}
+  songXML: 
+  judgePosY: 0
+  gameSpeed: 1
+  good: 168
+  perfect: 16.8
+  maxHp: 0
+  badDamage: 0
+  goodHeal: 0
+  perfectHeal: 0
+  goodScore: 0
+  perfectScore: 0
+  hp: 0
+  combo: 0
+  score: 0
+  UI: {fileID: 0}
+  Ranking: {fileID: 0}
 --- !u!1 &1908948485
 GameObject:
   m_ObjectHideFlags: 0
