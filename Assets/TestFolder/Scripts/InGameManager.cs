@@ -3,15 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-<<<<<<<< HEAD:Assets/Scripts/Manager/GameManager.cs
-public class GameManager : SingletoneBase<GameManager>
-{
-========
 public class InGameManager : MonoBehaviour
 {
     public static InGameManager instance;
 
->>>>>>>> branch_choi:Assets/TestFolder/Scripts/InGameManager.cs
 	[SerializeField] private GameObject judgeLine;
 	
 	public Queue<GameObject>[] queues = new Queue<GameObject>[4];
