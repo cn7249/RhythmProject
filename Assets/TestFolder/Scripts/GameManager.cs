@@ -32,8 +32,6 @@ public class GameManager : MonoBehaviour
     public int hp;
 	public int combo;
 	public int score;
-
-	public int tps;
 	
 	private void Awake()
 	{

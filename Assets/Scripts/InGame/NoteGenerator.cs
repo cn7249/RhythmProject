@@ -29,7 +29,7 @@ public class NoteGenerator : MonoBehaviour
 
     private void Start()
     {
-        LoadNotes("judgeTest.xml");
+        LoadNotes("shortcut.xml");
     }
 
     //private void Update()
@@ -66,7 +66,6 @@ public class NoteGenerator : MonoBehaviour
         hpt = 640f / tpm;
         tempo = _xml.songInfos.tempo;
         hps = 8f / 3f * tempo;
-        GameManager.instance.tps = _xml.songInfos.tps;
     }
 
     private void MakeNotes()
