@@ -37,7 +37,7 @@ namespace IntroUIScene
         
         
 
-        public void ClickOnce(MusicData data)
+        public string ClickOnce(MusicData data)
         {
             if (audioClip != null)
             {
@@ -56,6 +56,8 @@ namespace IntroUIScene
             string song = data.MusicPathInfo.Replace("Musics/", "");
             GameManager.Instance.Ranking.songName = song;
             GameManager.Instance.songName = song;
+
+            return song;
         }
 
         public void AudioStop()
