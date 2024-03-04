@@ -11,8 +11,8 @@ public class GridInfoUI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _currentBar.text = PatternManager.Instance.GetCurrentBar.ToString();
-        _totalBar.text = PatternManager.Instance.GetTotalBar.ToString();
+        _currentBar.text = (PatternManager.Instance.GetCurrentBar + 1).ToString();
+        _totalBar.text = (PatternManager.Instance.GetTotalBar + 1).ToString();
         _currentScale.text = (PatternManager.Instance.GetGridScale * 100).ToString("N0") + "%";
     }
 
