@@ -34,9 +34,6 @@ public class InGameManager : MonoBehaviour
     public int hp;
 	public int combo;
 	public int score;
-
-	public UIManager UI;
-	public RankingManager Ranking;
 	
 	private void Awake()
 	{
@@ -53,20 +50,24 @@ public class InGameManager : MonoBehaviour
 
 		hp = maxHp;
 
-		songXML = "shortcut_110_cut";
+		// songXML = GameManager.Instance.songName;
+        // gameSpeed = GameManager.Instance.gameSpeed;
+
     }
 
+    private void Start()
+    {
+		GameSpeedChange(gameSpeed);
+    }
 
     private void Bad()
     {
-        Debug.Log("���");
         hp = Mathf.Max(hp - badDamage, 0);
 		combo = 0;
     }
 
 	private void Good()
     {
-        Debug.Log("��");
         hp = Mathf.Min(hp + goodHeal, maxHp);
 		combo++;
 		score += goodScore;
@@ -74,7 +75,6 @@ public class InGameManager : MonoBehaviour
 
 	private void Perfect()
     {
-        Debug.Log("����");
         hp = Mathf.Min(hp + perfectHeal, maxHp);
         combo++;
         score += perfectScore;

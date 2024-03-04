@@ -24,12 +24,6 @@ public class RankingManager : SingletoneBase<RankingManager>
     public Dictionary<string, List<RankingEntry>> rankingMap = new Dictionary<string, List<RankingEntry>>();
     public string SongName { get; set; }
 
-    /*[SerializeField] private GameObject contentPanel;
-    [SerializeField] private GameObject contentPrefab;
-
-    [SerializeField] private GameObject rankingCanvas;*/
-
-
 
     public override void Init()
     {
@@ -103,7 +97,6 @@ public class RankingManager : SingletoneBase<RankingManager>
     #endregion
 
 
-    //TODO => UI 매니저 자리 잡히면 수정 필요
     #region 순위 출력
     public void ShowRanking()
     {
