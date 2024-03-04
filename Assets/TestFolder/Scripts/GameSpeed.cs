@@ -8,7 +8,6 @@ public class GameSpeed : MonoBehaviour
 {
     [SerializeField] private GameObject uiNotes;
 
-    private bool speedBool;
     private float speedUnit = 0.1f;
 
     private void Start()
@@ -29,20 +28,6 @@ public class GameSpeed : MonoBehaviour
         if (context.started)
         {
             InGameManager.instance.GameSpeedChange(InGameManager.instance.gameSpeed + speedUnit);
-        }
-    }
-
-    public void OnClickTestButton()
-    {
-        if (!speedBool)
-        {
-            InGameManager.instance.GameSpeedChange(5);
-            speedBool = true;
-        }
-        else
-        {
-            InGameManager.instance.GameSpeedChange(1);
-            speedBool = false;
         }
     }
 

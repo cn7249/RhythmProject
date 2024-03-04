@@ -13,8 +13,7 @@ public class NoteBehaviour : MonoBehaviour, IPointerDownHandler
     public int index;
     private float good;
     private float judgePosY;
-    private float gameSpeed;
-    private float tps;
+    private float gameSpeed = 1;
 
     private Transform trans;
 
@@ -25,13 +24,8 @@ public class NoteBehaviour : MonoBehaviour, IPointerDownHandler
         good = InGameManager.instance.good;
 
         trans = this.gameObject.transform;
-    }
 
-    private void Start()
-    {
         judgePosY = InGameManager.instance.judgePosY;
-        gameSpeed = InGameManager.instance.gameSpeed;
-
 
         InGameManager.instance.GameSpeedChange += ChangeSpeed;
     }
