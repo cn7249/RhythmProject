@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        audioClip = Resources.Load($"Musics/{GameManager.instance.songXML}") as AudioClip;
+        audioClip = Resources.Load($"Musics/{InGameManager.instance.songXML}") as AudioClip;
         audioSource.clip = audioClip;
         audioSource.Play();
     }

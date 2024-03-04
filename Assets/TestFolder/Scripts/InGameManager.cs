@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class InGameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static InGameManager instance;
 
 	[SerializeField] private GameObject judgeLine;
 	

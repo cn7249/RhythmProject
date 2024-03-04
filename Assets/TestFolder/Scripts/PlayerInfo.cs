@@ -10,20 +10,20 @@ public class PlayerInfo : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.JudgementBad += UpdateScore;
-        GameManager.instance.JudgementGood += UpdateScore;
-        GameManager.instance.JudgementPerfect += UpdateScore;
-        GameManager.instance.GameSpeedChange += UpdateGameSpeed;
+        InGameManager.instance.JudgementBad += UpdateScore;
+        InGameManager.instance.JudgementGood += UpdateScore;
+        InGameManager.instance.JudgementPerfect += UpdateScore;
+        InGameManager.instance.GameSpeedChange += UpdateGameSpeed;
 
         UpdateScore();
-        UpdateGameSpeed(GameManager.instance.gameSpeed);
+        UpdateGameSpeed(InGameManager.instance.gameSpeed);
     }
 
     private void UpdateScore()
     {
-        playerScore.text = $"HP : {GameManager.instance.hp}\n";
-        playerScore.text += $"Score : {GameManager.instance.score}\n";
-        playerScore.text += $"Combo : {GameManager.instance.combo}\n";
+        playerScore.text = $"HP : {InGameManager.instance.hp}\n";
+        playerScore.text += $"Score : {InGameManager.instance.score}\n";
+        playerScore.text += $"Combo : {InGameManager.instance.combo}\n";
     }
 
     private void UpdateGameSpeed(float speed)

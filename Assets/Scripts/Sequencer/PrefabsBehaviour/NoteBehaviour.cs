@@ -22,23 +22,23 @@ public class NoteBehaviour : MonoBehaviour, IPointerDownHandler
     {
         _pos = this.transform.localPosition;
 
-        good = GameManager.instance.good;
+        good = InGameManager.instance.good;
 
         trans = this.gameObject.transform;
     }
 
     private void Start()
     {
-        judgePosY = GameManager.instance.judgePosY;
-        gameSpeed = GameManager.instance.gameSpeed;
+        judgePosY = InGameManager.instance.judgePosY;
+        gameSpeed = InGameManager.instance.gameSpeed;
 
 
-        GameManager.instance.GameSpeedChange += ChangeSpeed;
+        InGameManager.instance.GameSpeedChange += ChangeSpeed;
     }
 
     private void OnDestroy()
     {
-        GameManager.instance.GameSpeedChange -= ChangeSpeed;
+        InGameManager.instance.GameSpeedChange -= ChangeSpeed;
     }
 
     private void Update()
@@ -50,11 +50,11 @@ public class NoteBehaviour : MonoBehaviour, IPointerDownHandler
 
         if (posY - judgePosY < - good * gameSpeed)
         {
-            var queue = GameManager.instance.queues[index];
+            var queue = InGameManager.instance.queues[index];
             if (this.gameObject == queue.Peek().gameObject)
             {
                 var obj = queue.Dequeue();
-                GameManager.instance.JudgementBad();
+                InGameManager.instance.JudgementBad();
                 Destroy(this.gameObject);
             }
         
