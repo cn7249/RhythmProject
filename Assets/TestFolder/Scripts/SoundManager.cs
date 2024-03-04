@@ -20,5 +20,15 @@ public class SoundManager : MonoBehaviour
     public void PlaySource()
     {
         audioSource.Play();
+
+        StartCoroutine(SongEndShowUI(audioSource.clip.length));
+        Debug.Log(audioSource.clip.length);
+    }
+
+    IEnumerator SongEndShowUI(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        UIManager.Instance.ShowUI<UIResultBoard>();
     }
 }

@@ -50,7 +50,9 @@ public class InGameManager : MonoBehaviour
 
 		hp = maxHp;
 
-		songXML = "shortcut_110_cut";
+		// songXML = GameManager.Instance.songName;
+        // gameSpeed = GameManager.Instance.gameSpeed;
+
     }
 
     private void Start()
