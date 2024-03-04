@@ -19,31 +19,23 @@ public class RankingMapWrap
     public List<RankingMap> RankingMapList = new List<RankingMap>();
 }
 
-public class RankingManager : MonoBehaviour
-{
-    public static RankingManager instance;
-    
+public class RankingManager : SingletoneBase<RankingManager>
+{    
     public Dictionary<string, List<RankingEntry>> rankingMap = new Dictionary<string, List<RankingEntry>>();
     public string SongName { get; set; }
 
-    [SerializeField] private GameObject contentPanel;
+    /*[SerializeField] private GameObject contentPanel;
     [SerializeField] private GameObject contentPrefab;
 
-    [SerializeField] private GameObject rankingCanvas;
+    [SerializeField] private GameObject rankingCanvas;*/
 
 
-    private void Awake()
+
+    public override void Init()
     {
-        instance = this; // TODO ½Ì±ÛÅæÀº °³¼± ÇÊ¿ä
-
         LoadRankingMap();
 
-        /*AddRankingEntry("ÂªÀºÄ¡¸¶", "test1", 10);
-        AddRankingEntry("ÂªÀºÄ¡¸¶", "test2", 100);
-        AddRankingEntry("ÂªÀºÄ¡¸¶", "test3", 10);
-        AddRankingEntry("ÂªÀºÄ¡¸¶", "test1", 150);*/
-
-        SaveRankingMap();
+        //SaveRankingMap();
     }
 
     #region °î º° ¼øÀ§ Ãß°¡
@@ -115,15 +107,17 @@ public class RankingManager : MonoBehaviour
     #region ¼øÀ§ Ãâ·Â
     public void ShowRanking()
     {
-        rankingCanvas.SetActive(true);
+        GameObject contentsPanel = Util.FindChild(UIManager.Instance.GetUI<UIRankingBoard>(), "ContentsPanel", true);
 
         int ranking = 1;
         int prevScore;
 
-        foreach (Transform child in contentPanel.GetComponent<Transform>())
+        foreach (Transform child in contentsPanel.GetComponent<Transform>())
         {
             Destroy(child.gameObject);
         }
+
+        if (SongName == null) return;
 
         if (rankingMap.ContainsKey(SongName))
         {
@@ -136,13 +130,17 @@ public class RankingManager : MonoBehaviour
                 if (prevScore != rankingEntry.Score)
                     ++ranking;
 
-                GameObject newContent = Instantiate(contentPrefab, contentPanel.GetComponent<Transform>());
-                newContent.GetComponent<Content>().SetInform(ranking, rankingEntry.UserName, rankingEntry.Score);
+                GameObject newContent = Util.Instantiate<UIContent>("Prefabs/UI", contentsPanel.GetComponent<Transform>());
+
+                //GameObject newContent = Instantiate(contentPrefab, contentPanel.GetComponent<Transform>());
+                newContent.GetComponent<UIContent>().SetInform(ranking, rankingEntry.UserName, rankingEntry.Score);
 
                 prevScore = rankingEntry.Score;
             }
         }
         else { return; }
+
+        UIManager.Instance.ShowUI<UIRankingBoard>();
     }
     #endregion
 

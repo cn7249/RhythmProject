@@ -48,7 +48,8 @@ namespace IntroUIScene
             _audioSource.PlayOneShot(audioClip, 0.7f);
 
             // 랭킹 매니저 곡 제목 전달
-            RankingManager.instance.SongName = data.MusicTitle;
+            Debug.Log(RankingManager.instance);
+            RankingManager.Instance.SongName = data.MusicTitle;
         }
 
         public void AudioStop()
