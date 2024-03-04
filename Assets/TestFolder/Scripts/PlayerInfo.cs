@@ -7,6 +7,7 @@ public class PlayerInfo : MonoBehaviour
 {
     [SerializeField] private TMP_Text playerScore;
     [SerializeField] private TMP_Text gameSpeed;
+    [SerializeField] private TMP_Text gameScore;
 
     private void Start()
     {
@@ -24,6 +25,8 @@ public class PlayerInfo : MonoBehaviour
         playerScore.text = $"HP : {InGameManager.instance.hp}\n";
         playerScore.text += $"Score : {InGameManager.instance.score}\n";
         playerScore.text += $"Combo : {InGameManager.instance.combo}\n";
+
+        gameScore.text = InGameManager.instance.score.ToString();
     }
 
     private void UpdateGameSpeed(float speed)
