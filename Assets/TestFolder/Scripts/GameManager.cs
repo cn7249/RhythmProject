@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameObject judgeLine;
 	
 	public Queue<GameObject>[] queues = new Queue<GameObject>[4];
-	public List<GameObject> lineList = new List<GameObject>();
 
 	public Action JudgementBad;
     public Action JudgementGood;
@@ -33,6 +32,8 @@ public class GameManager : MonoBehaviour
     public int hp;
 	public int combo;
 	public int score;
+
+	public int tps;
 	
 	private void Awake()
 	{
