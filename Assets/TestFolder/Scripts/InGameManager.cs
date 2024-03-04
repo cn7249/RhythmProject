@@ -3,15 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-<<<<<<<< HEAD:Assets/Scripts/Manager/GameManager.cs
-public class GameManager : SingletoneBase<GameManager>
-{
-========
 public class InGameManager : MonoBehaviour
 {
     public static InGameManager instance;
 
->>>>>>>> branch_choi:Assets/TestFolder/Scripts/InGameManager.cs
 	[SerializeField] private GameObject judgeLine;
 	
 	public Queue<GameObject>[] queues = new Queue<GameObject>[4];
@@ -45,8 +40,6 @@ public class InGameManager : MonoBehaviour
 	
 	private void Awake()
 	{
-		base.Awake();
-
 		instance = this;
 		for (int i = 0; i < queues.Length; i++)
 		{
@@ -63,11 +56,6 @@ public class InGameManager : MonoBehaviour
 		songXML = "shortcut_110_cut";
     }
 
-    public override void Init()
-    {
-        UI = UIManager.Instance;
-		Ranking = RankingManager.Instance;
-    }
 
     private void Bad()
     {
