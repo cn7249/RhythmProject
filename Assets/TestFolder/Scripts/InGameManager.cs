@@ -34,6 +34,7 @@ public class InGameManager : MonoBehaviour
     public int hp;
 	public int combo;
 	public int score;
+
 	
 	private void Awake()
 	{
@@ -49,6 +50,8 @@ public class InGameManager : MonoBehaviour
         JudgementPerfect += Perfect;
 
 		hp = maxHp;
+
+		songXML = "shortcut_110_cut";
     }
 
     private void Bad()
