@@ -20,6 +20,8 @@ namespace IntroUIScene
         private AudioSource _audioSource;
         private AudioClip audioClip;
         private MusicSelectController _musicData;
+
+        private Button rankingButton;
         
         
         // Start is called before the first frame update
@@ -27,7 +29,10 @@ namespace IntroUIScene
         {
             GetMusicData();
             _audioSource = GetComponent<AudioSource>();
-            
+
+            // Added By Kang
+            rankingButton = Util.FindChild<Button>(gameObject, "RankingButton", true);
+            rankingButton.onClick.AddListener(GameManager.Instance.Ranking.ShowRanking);
         }
         
         
@@ -48,8 +53,8 @@ namespace IntroUIScene
             _audioSource.PlayOneShot(audioClip, 0.7f);
 
             // 랭킹 매니저 곡 제목 전달
-            Debug.Log(RankingManager.instance);
-            RankingManager.Instance.SongName = data.MusicTitle;
+            GameManager.Instance.Ranking.SongName = data.MusicTitle;
+            Debug.Log(GameManager.Instance.Ranking.SongName);
         }
 
         public void AudioStop()

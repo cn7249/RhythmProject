@@ -107,6 +107,8 @@ public class RankingManager : SingletoneBase<RankingManager>
     #region 순위 출력
     public void ShowRanking()
     {
+        UIManager.Instance.ShowUI<UIRankingBoard>();
+
         GameObject contentsPanel = Util.FindChild(UIManager.Instance.GetUI<UIRankingBoard>(), "ContentsPanel", true);
 
         int ranking = 1;
@@ -132,15 +134,12 @@ public class RankingManager : SingletoneBase<RankingManager>
 
                 GameObject newContent = Util.Instantiate<UIContent>("Prefabs/UI", contentsPanel.GetComponent<Transform>());
 
-                //GameObject newContent = Instantiate(contentPrefab, contentPanel.GetComponent<Transform>());
                 newContent.GetComponent<UIContent>().SetInform(ranking, rankingEntry.UserName, rankingEntry.Score);
 
                 prevScore = rankingEntry.Score;
             }
         }
         else { return; }
-
-        UIManager.Instance.ShowUI<UIRankingBoard>();
     }
     #endregion
 

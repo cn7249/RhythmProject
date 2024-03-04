@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SingletoneBase<T> : MonoBehaviour where T : MonoBehaviour
 {
-    public static T instance;
+    private static T instance;
 
     public static T Instance
     {
@@ -26,6 +26,15 @@ public class SingletoneBase<T> : MonoBehaviour where T : MonoBehaviour
 
     private void Awake()
     {
+        if(instance != null && instance != this)
+        {
+            Destroy(instance);
+            return;
+        }
+
+        instance = this as T;
+        DontDestroyOnLoad(gameObject);
+
         Init();
     }
 

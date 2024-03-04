@@ -6,7 +6,7 @@ public class UIBase : MonoBehaviour
 {
     // TODO : 컴포넌트 가져오는 부분 적용 필요
 
-    private void Start()
+    private void Awake()
     {
         Init();
     }

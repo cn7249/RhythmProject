@@ -12,7 +12,7 @@ public class GenerateLine : MonoBehaviour
 	
 	private void Start()
 	{
-		var lineList = GameManager.instance.lineList;
+		var lineList = GameManager.Instance.lineList;
 		lineList.Clear();
 		for (int i = 0; i < lineSize; i++)
 		{

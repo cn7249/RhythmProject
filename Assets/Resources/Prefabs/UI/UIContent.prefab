@@ -92,9 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c89f2e9226922418e57a4d64b1a152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rank: {fileID: 8326913397498086410}
-  userName: {fileID: 5258960155913642}
-  score: {fileID: 7360870227925111609}
 --- !u!1 &4138499737313138124
 GameObject:
   m_ObjectHideFlags: 0
