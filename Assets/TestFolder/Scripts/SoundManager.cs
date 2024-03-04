@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager Instance;
+
     public AudioSource audioSource;
     private AudioClip audioClip;
 
@@ -11,6 +13,12 @@ public class SoundManager : MonoBehaviour
     {
         audioClip = Resources.Load($"Musics/{GameManager.instance.songXML}") as AudioClip;
         audioSource.clip = audioClip;
+
+        Instance = this;
+    }
+
+    public void PlaySource()
+    {
         audioSource.Play();
     }
 }
