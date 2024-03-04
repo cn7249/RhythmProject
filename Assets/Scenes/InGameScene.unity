@@ -2235,7 +2235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   judgeLine: {fileID: 815894369}
-  songXML: 
+  songXML: shortcut_110_cut
   judgePosY: 0
   gameSpeed: 5
   good: 168
