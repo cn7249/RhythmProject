@@ -13,14 +13,14 @@ public class GameSpeed : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.GameSpeedChange += ChangeSpeed;
+        InGameManager.instance.GameSpeedChange += ChangeSpeed;
     }
 
     public void SpeedDown(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            GameManager.instance.GameSpeedChange(GameManager.instance.gameSpeed - speedUnit);
+            InGameManager.instance.GameSpeedChange(InGameManager.instance.gameSpeed - speedUnit);
         }
     }
 
@@ -28,7 +28,7 @@ public class GameSpeed : MonoBehaviour
     {
         if (context.started)
         {
-            GameManager.instance.GameSpeedChange(GameManager.instance.gameSpeed + speedUnit);
+            InGameManager.instance.GameSpeedChange(InGameManager.instance.gameSpeed + speedUnit);
         }
     }
 
@@ -36,18 +36,18 @@ public class GameSpeed : MonoBehaviour
     {
         if (!speedBool)
         {
-            GameManager.instance.GameSpeedChange(5);
+            InGameManager.instance.GameSpeedChange(5);
             speedBool = true;
         }
         else
         {
-            GameManager.instance.GameSpeedChange(1);
+            InGameManager.instance.GameSpeedChange(1);
             speedBool = false;
         }
     }
 
     public void ChangeSpeed(float index)
     {
-        GameManager.instance.gameSpeed = index;
+        InGameManager.instance.gameSpeed = index;
     }
 }
