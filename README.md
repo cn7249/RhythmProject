@@ -47,6 +47,8 @@ XMLManager.cs - XML 파일의 저장과 불러오기를 담당
 </details>
 
 
+### 인게임(리듬게임 메인)
+
 <details>
 <summary> 인게임 UI & 이펙트(인게임 UI 와 효과)</summary>
 <div 마크다운="1">
@@ -69,9 +71,6 @@ UI_JudgeEffects.cs - 판정 UI의 조건과 애니메이션 제어
 
 </div>
 </details>
-
-### 인게임(리듬게임 메인)
-
 
 
 ### 랭킹 시스템
