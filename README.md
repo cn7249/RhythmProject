@@ -29,9 +29,9 @@ GridBtnBehaviour.cs - 클릭한 위치에 노트가 생성되고 각 트랙의 L
 
 NotePSBehaviour.cs - 생성한 노트의 마우스 우클릭 시 삭제
 
-비트 셀렉터UI.cs - 4, 8, 12, 16박자 선택 UI와 제어
+BeatSelectorUI.cs - 4, 8, 12, 16박자 선택 UI와 제어
 
-그리드 정보UI.cs - 패턴 그리드의 마디 선택과 확대/축소 정보 제공 UI의 제어
+GridInfoUI.cs - 패턴 그리드의 마디 선택과 확대/축소 정보 제공 UI의 제어
 
 SaveLoadUI.cs - 채보 파일(.xml)의 저장과 불러오기 UI의 제어
 
@@ -59,13 +59,7 @@ GearInput.cs - (입력 프로토타입, 나중에 철환님께서 마무리)
 
 NoteGenerator.cs - 만들어놓은 채보 파일(.xml 확장자)을 불러와 노트로 만듦
 
-NoteGenerator.cs - 만들어놓은 채보 파일(.xml 확장자)을 불러와 노트로 만듦
-
 UI_ComboFX.cs - 콤보 UI의 조건과 애니메이션 제어
-
-UI_ComboFX.cs - 콤보 UI의 조건과 애니메이션 제어
-
-UI_JudgeEffects.cs - 판정 UI의 조건과 애니메이션 제어
 
 UI_JudgeEffects.cs - 판정 UI의 조건과 애니메이션 제어
 
