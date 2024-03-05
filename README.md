@@ -13,13 +13,15 @@ Unity 게임 개발 심화 주차 3조(개발은 삼순이발) 팀 과제
 |추민규|채보 툴 제작|https://github.com/cn7249 |
 |최철환|인게임 제작|https://github.com/sskesu |
 
-## 게임하는 방법
 
 ## 주요 기능
 ### 채보 툴
 <details>
 <summary>패턴 시퀀서(일명 채보툴)</summary>
 <div markdown="1">
+
+![image](https://github.com/cn7249/RhythmProject/assets/49467508/ab1f351f-0b58-4684-bfc0-f452a4e5ae2d)
+
 
 BarBehaviour.cs - 채보툴에서 마디를 클릭했을 때의 반응 등의 UI 행동
 
@@ -46,21 +48,57 @@ XMLManager.cs - XML 파일의 저장과 불러오기를 담당
 
 
 <details>
-<summary> 인게임 UI & 이펙트(인게임 UI 와 효과)<summary>
- <div 마크다운="1">
+<summary> 인게임 UI & 이펙트(인게임 UI 와 효과)</summary>
+<div 마크다운="1">
+ 
+![image](https://github.com/cn7249/RhythmProject/assets/49467508/4b27d1a1-43dc-4514-8890-70a6d7620f4b)
 
 GearInput.cs - (입력 프로토타입, 나중에 철환님께서 마무리)
+
 NoteGenerator.cs - 만들어놓은 채보 파일(.xml 확장자)을 불러와 노트로 만듦
+
 NoteGenerator.cs - 만들어놓은 채보 파일(.xml 확장자)을 불러와 노트로 만듦
+
 UI_ComboFX.cs - 콤보 UI의 조건과 애니메이션 제어
+
 UI_ComboFX.cs - 콤보 UI의 조건과 애니메이션 제어
+
 UI_JudgeEffects.cs - 판정 UI의 조건과 애니메이션 제어
+
 UI_JudgeEffects.cs - 판정 UI의 조건과 애니메이션 제어
-  
+
+</div>
+</details>
+
+### 인게임(리듬게임 메인)
+
+
+
+### 랭킹 시스템
+<details>
+<summary> 곡 별로 랭킹 출력 </summary>
+<div 마크다운="1">
+곡 별로 랭킹이 출력됩니다.
+
+랭킹의 정렬은 병합 정렬을 사용하여 중복 요소에 대한 불안정성을 없앴습니다.
+
+![image](https://github.com/cn7249/RhythmProject/assets/49467508/6a2e4735-bdda-464f-b057-d199e48d1429)
+
+
+</div>
+</details>
+
+### 곡 리스트
+<details>
+<summary> 곡의 리스트 출력</summary>
+<div 마크다운="1">
+ 
+![image](https://github.com/cn7249/RhythmProject/assets/49467508/7fb22ecd-9eeb-4293-9f53-1453e5d55bce)
+ 
+ui 기능에서는 플레이 음악을 누르면 음악이 재생되고 다시한번 누르면 플레이를 할 수 있는 구조입니다.
+
+해당기능에서 음악을 플레이 하고 다른곡을 누르면 멈추고 플레이 하게 제작했습니다.
 </div>
 </details>
 
 
-### 인게임(리듬게임 메인)
-### 랭킹 시스템
-### 곡 리스트
