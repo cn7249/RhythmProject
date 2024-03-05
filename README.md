@@ -1,3 +1,5 @@
+![크기 줄임](https://github.com/cn7249/RhythmProject/assets/49467508/1735e231-9c27-4772-a32d-346f1dcf2fa7)
+
 # 리듬프로젝트(가제)
 Unity 게임 개발 심화 주차 3조(개발은 삼순이발) 팀 과제
 ## 프로젝트 소개
