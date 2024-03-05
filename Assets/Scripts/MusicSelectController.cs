@@ -82,14 +82,7 @@ namespace IntroUIScene
 
         public List<MusicData> musicDatas = new List<MusicData> // musicdata.cs 에서 만들게 아니라 여기서 만들어도됨
         {
-            new MusicData("AOA", "짧은치마", "Images/MusicImages/miniskirt", "Musics/miniskirt"),
-            new MusicData("선미", "24시간이 모자라", "Images/MusicImages/less24h", "Musics/less24"),
-            new MusicData("레드벨벳", "아이스크림케익", "Images/MusicImages/icecake", "Musics/icecake"),
-            new MusicData("레드벨벳", "러시안룰렛", "Images/MusicImages/russian", "Musics/russian"),
-            new MusicData("NiziU", "Look At Me", "Images/MusicImages/lookatme", "Musics/lookatme"),
-            new MusicData("AOA", "심쿵해", "Images/MusicImages/simkoong", "Musics/simkoong"),
             new MusicData("AOA", "단발머리", "Images/MusicImages/shortcut", "Musics/shortcut"),
-
         };
     }
     
